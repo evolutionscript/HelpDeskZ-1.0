@@ -7,8 +7,8 @@
  * @author Evolution Script S.A.C.
  * @since 1.0.0
  */
-define('INCLUDES','./');
-define('UPLOAD_DIR','../uploads/');
+define('INCLUDES',dirname(__FILE__).'/');
+define('UPLOAD_DIR',dirname(__FILE__).'/../uploads/');
 require_once INCLUDES.'parser/MimeMailParser.class.php';
 require_once INCLUDES.'classes/classRegistry.php';
 require_once INCLUDES.'classes/classMailer.php';
