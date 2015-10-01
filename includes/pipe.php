@@ -7,28 +7,13 @@
  * @author Evolution Script S.A.C.
  * @since 1.0.0
  */
-define('INCLUDES',dirname(__FILE__).'/');
-define('UPLOAD_DIR',dirname(__FILE__).'/../uploads/');
+define('ROOTPATH', dirname(dirname(__FILE__)).'/');
+define('INCLUDES', ROOTPATH . 'includes/');
+define('UPLOAD_DIR',ROOTPATH.'uploads/');
+
+require_once INCLUDES.'global.php';
 require_once INCLUDES.'parser/MimeMailParser.class.php';
-require_once INCLUDES.'classes/classRegistry.php';
-require_once INCLUDES.'classes/classMailer.php';
-require_once INCLUDES.'functions.php';
-// DB Connection
-$helpdeskz = new Registry();
-if($helpdeskz->config['Database']['type'] == 'mysqli'){
-	require_once INCLUDES.'classes/classMysqli.php';	
-	$db = new MySQLIDB();
-}else{
-	require_once INCLUDES.'classes/classMysql.php';	
-	$db = new MySQLDB();
-}
-$db->connect($helpdeskz->config['Database']['dbname'], $helpdeskz->config['Database']['servername'], $helpdeskz->config['Database']['username'], $helpdeskz->config['Database']['password'], $helpdeskz->config['Database']['tableprefix']);
-//Settings
-$settings = array();
-$q = $db->query("SELECT * FROM ".TABLE_PREFIX."settings");
-while($r = $db->fetch_array($q)){
-	$settings[$r['field']] = $r['value'];
-}
+
 if($settings['email_piping'] == 'no'){
 	exit;	
 }
