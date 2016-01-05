@@ -10,16 +10,16 @@
 define('INCLUDES','./');
 define('UPLOAD_DIR','../uploads/');
 require_once INCLUDES.'parser/MimeMailParser.class.php';
-require_once INCLUDES.'classes/classRegistry.php';
-require_once INCLUDES.'classes/classMailer.php';
+require_once INCLUDES . 'classes/Registry.php';
+require_once INCLUDES . 'classes/Mailer.php';
 require_once INCLUDES.'functions.php';
 // DB Connection
 $helpdeskz = new Registry();
 if($helpdeskz->config['Database']['type'] == 'mysqli'){
-	require_once INCLUDES.'classes/classMysqli.php';	
+	require_once INCLUDES . 'classes/MySQLi.php';
 	$db = new MySQLIDB();
 }else{
-	require_once INCLUDES.'classes/classMysql.php';	
+	require_once INCLUDES . 'classes/MySQL.php';
 	$db = new MySQLDB();
 }
 $db->connect($helpdeskz->config['Database']['dbname'], $helpdeskz->config['Database']['servername'], $helpdeskz->config['Database']['username'], $helpdeskz->config['Database']['password'], $helpdeskz->config['Database']['tableprefix']);

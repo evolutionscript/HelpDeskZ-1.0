@@ -1,0 +1,23 @@
+{
+  "name": "spyp-helpdeskz",
+  "description": "A short description of what your package does",
+  "require": {
+    "php": ">=5.3.0",
+    "phpmailer/phpmailer": "~5.2",
+    "twig/twig":"dev-master"
+  },
+  "authors":[
+    {
+      "name": "msharif ahrari",
+      "email": "msahrif.ahrari@gmail.com",
+      "role": "Developer"
+    }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Classes\\": "classes",
+        "Parser\\": "parser",
+        "Langs\\": "languages"
+      }
+    }
+}

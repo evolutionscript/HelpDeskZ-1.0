@@ -564,4 +564,3 @@ $timezone[] = 'Universal';
 $timezone[] = 'W-SU';
 $timezone[] = 'WET';
 $timezone[] = 'Zulu';
-?>
