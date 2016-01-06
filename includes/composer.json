@@ -6,13 +6,6 @@
     "phpmailer/phpmailer": "~5.2",
     "twig/twig":"dev-master"
   },
-  "authors":[
-    {
-      "name": "msharif ahrari",
-      "email": "msahrif.ahrari@gmail.com",
-      "role": "Developer"
-    }
-    ],
     "autoload": {
       "psr-4": {
         "Classes\\": "classes",
