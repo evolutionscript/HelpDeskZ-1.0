@@ -1,0 +1,111 @@
+<?php
+/**
+ * @package HelpDeskZ
+ * @website: http://www.helpdeskz.com
+ * @community: http://community.helpdeskz.com
+ * @author Evolution Script S.A.C.
+ * @since 1.0.0
+ */
+$LANG['HOME'] = 'Главная';
+$LANG['MY_TICKETS'] = 'Мои заявки';
+$LANG['SUBMIT_A_TICKET'] = 'Новая проблема';
+$LANG['KNOWLEDGEBASE'] = 'База знаний';
+$LANG['NEWS'] = 'Новости';
+$LANG['ACCOUNT_LOGIN'] = 'Мой акаунт';
+$LANG['LASTEST_UPDATES'] = 'Последние обновления';
+$LANG['YOUR_EMAIL_ADDRESS'] = 'Ваш e-mail';
+$LANG['YOUR_PASSWORD'] = 'Ваш пароль';
+$LANG['REMEMBER_ME'] = 'Запомнить меня';
+$LANG['LOST_PASSWORD'] = 'Забыл(-а) пароль';
+$LANG['LOGIN'] = 'Войти';
+$LANG['ACCOUNT'] = 'Акаунт';
+$LANG['MY_PROFILE'] = 'Мои данные';
+$LANG['PREFERENCES'] = 'Настройки';
+$LANG['CHANGE_PASSWORD'] = 'Изменить пароль';
+$LANG['LOGOUT'] = 'Выход';
+$LANG['VIEW_ALL_NEWS'] = 'Все новости';
+$LANG['POSTED_BY_ON'] = 'Опубликовано %author%, %date%';
+$LANG['OLDEST_POSTS'] = 'Старые публикации';
+$LANG['NEWEST_POSTS'] = 'Новые публикации';
+$LANG['MOST_POPULAR_ARTICLES'] = 'Популярные статьи';
+$LANG['NEWEST_ARTICLES'] = 'Новые статьи';
+$LANG['MORE_TOPICS'] = 'Показать остальные';
+$LANG['FILE_NOT_FOUND'] = 'Файл не найден.';
+$LANG['SEARCH'] = 'Искать';
+$LANG['SEARCH_IN_KNOWLEDGEBASE'] = 'Поиск в базе знаний';
+$LANG['SEARCH_RESULTS'] = 'Результаты поиска';
+$LANG['SEARCH_NOT_FOUND'] = 'Мы не смогли найти ничего по вашему запросу';
+$LANG['ENTER_EMAIL_RECOVER_PASSWORD'] = 'Введите Ваш email, который здесь зарегистрирован, и нажмите Отправить. Вы получите письмо со ссылкой для сброса пароля.';
+$LANG['ACCOUNT_INFORMATION'] = 'Account Information';
+$LANG['EMAIL'] = 'E-mail';
+$LANG['CAPTCHA_VERIFICATION'] = 'Проверка CAPTCHA';
+$LANG['ENTER_TEXT_CAPTCHA'] = 'Введите текст, который видите на картинке, в текстовое поле ниже (используется для борьбы со спам-ботами).';
+$LANG['SUBMIT'] = 'Отправить';
+$LANG['CANT_FIND_SOLUTION_SUBMIT_TICKET'] = 'Если Вы не смогли найти решение своей проблемы, можете создать тикет, выбрав подходящий раздел.';
+$LANG['SELECT_DEPARTMENT_TICKET'] = 'Пожалуйста, выберите подходящий отдел (раздел) для отправки вашей заявки';
+$LANG['CSRF_ERROR'] = 'Обнаружена проблема (CSRF); повторите попытку ещё раз, пожалуйста.';
+$LANG['DEPARTMENTS'] = 'Разделы';
+$LANG['NEXT'] = 'Продолжить';
+$LANG['INVALID_EMAIL_OR_PASSWORD'] = 'Неправильный адрес email или пароль.';
+$LANG['YOUR_TICKET_DETAILS'] = 'Подробная информация';
+$LANG['ENTER_TICKET_DETAILS'] = 'Введите детальную информацию о Вашем запросе. Если Вы сообщаете о проблеме, предоставьте как можно больше подробностей для её воспроизведения и проверки.';
+$LANG['GENERAL_INFORMATION'] = 'Общая информация';
+$LANG['FULL_NAME'] = 'Полное имя';
+$LANG['PRIORITY'] = 'Приоритет';
+$LANG['YOUR_MESSAGE'] = 'Сообщение';
+$LANG['SUBJECT'] = 'Краткий заголовок';
+$LANG['ATTACHMENTS'] = 'Дополнительный файл';
+$LANG['INVALID_CAPTCHA_CODE'] = 'ОШИБКА: неправильно введены символы с картинки';
+$LANG['INVALID_EMAIL_ADDRESS'] = 'ОШИБКА: укажите правильный адрес e-mail';
+$LANG['ONE_REQUIRED_FIELD_EMPTY'] = 'Одно из обязательных полей не заполнено';
+$LANG['ERROR_UPLOADING_A_FILE'] = 'Ошибка при загрузке файла на сервер.';
+$LANG['INVALID_FILE_EXTENSION'] = 'Недопустимое расширение файла.';
+$LANG['FILE_NOT_ALLOWED'] = 'Загрузка файла запрещена.';
+$LANG['FILE_IS_BIG'] = 'Файл слишком большого размера. Максимум - %size%';
+$LANG['REQUEST_RECEIVED'] = 'Ваш запрос получен и ожидает обработки';
+$LANG['REQUEST_RECEIVED_RESPONSE'] = 'Мы получили Ваш запрос и ответим в ближайшее время. Вы можете залогиниться для просмотра статуса обработки заявки. Информация об обновлениях будет приходить на указанный Вами e-mail.';
+$LANG['TICKET_ID'] = 'Номер заявки';
+
+$LANG['WE_SENT_YOUR_NEW_PASSWORD'] = 'Мы отослали email с новым паролем на указанный адрес';
+$LANG['EMAIL_WAS_NOT_FOUND'] = 'Email адрес не найден.';
+$LANG['SEARCH_TICKET_ID'] = 'Поиск по номеру заявки';
+$LANG['VIEW_TICKETS'] = 'Мои заявки';
+$LANG['VIEW_TICKETS_DESCRIPTION'] = 'Ниже перечислены оставленные Вами заявки. Нажмите на заголовок заявки для просмотра истории переписки по ней.';
+$LANG['LAST_UPDATE'] = 'Последнее обновление';
+$LANG['DEPARTMENT'] = 'Отдел';
+$LANG['STATUS'] = 'Статус';
+$LANG['VIEW_TICKET_ID'] = 'Просмотр заявки #%id%';
+$LANG['CREATED'] = 'Создано';
+$LANG['UPDATED'] = 'Обновлено';
+$LANG['TICKET_IS_CLOSED'] = 'Заявка закрыта.';
+$LANG['ADD_REPLY'] = 'Добавить ответ';
+$LANG['YOUR_REPLY_SENT'] = 'Ваш ответ на эту заявку успешно отправлен';
+$LANG['USER'] = 'Пользователь';
+$LANG['STAFF'] = 'Команда проекта';
+$LANG['POSTED_ON'] = 'Отправлено';
+$LANG['TICKET_NOT_FOUND_OR_PERMISSION'] = 'Извините, мы не можем найти запрошенную заявку или вам не хватает прав для её просмотра.';
+$LANG['TICKET_NOT_FOUND'] = 'Заявка не найдена.';
+$LANG['YOUR_PROFILE_UPDATED'] = 'Ваша информация была обновлена.';
+$LANG['UPDATE'] = 'Обновить';
+$LANG['YOUR_PREFERENCES_SAVED'] = 'Ваши настройки сохранены.';
+$LANG['GENERAL_OPTIONS'] = 'Общие настройки';
+$LANG['TIMEZONE'] = 'Временная зона';
+$LANG['DEFAULT_TIMEZONE'] = 'Временная зона по умолчанию';
+$LANG['PASSWORD_UPDATED'] = 'Пароль обновлён.';
+$LANG['PASSWORD_DETAILS'] = 'Пароль';
+$LANG['EXISTING_PASSWORD'] = 'Нынешний пароль';
+$LANG['NEW_PASSWORD'] = 'Новый пароль';
+$LANG['CONFIRM'] = 'Подтвердить';
+$LANG['EXISTING_PASSWORD_INCORRECT'] = 'Ваш текущий пароль указан неверно.';
+$LANG['NEW_PASSWORDS_DO_NOT_MATCH'] = 'Введённые новые пароли не совпадают.';
+$LANG['EMAIL_ASSOCIATED_OTHER_ACCOUNT'] = 'Этот адрес email уже используется другим акаунтом.';
+$LANG['WE_ARE_PERFORMING_MAINTENANCE'] = 'В данный момент проводятся технические работы. Вскоре сайт будет доступен. Примите наши извинения за возможные неудобства.';
+$LANG['MAINTENANCE_MODE'] = 'Режим обслуживания';
+$LANG['PAGE_NOT_FOUND'] = 'Страница не найдена - 404';
+$LANG['CLICK_TO_BACK_HELPDESK'] = 'Нажмите ссылку для перехода на главную страницу техподдержки';
+$LANG['OPEN'] = 'Открытая';
+$LANG['AWAITING_REPLY'] = 'Ожидает ответа';
+$LANG['IN_PROGRESS'] = 'Ведётся работа';
+$LANG['ANSWERED'] = 'Ответ от техподдержки';
+$LANG['CLOSED'] = 'Закрытая';
+?>
