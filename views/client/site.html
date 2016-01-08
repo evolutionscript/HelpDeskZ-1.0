@@ -5,6 +5,7 @@
 <title>{% block title %}{{ settings.windows_title }}{% endblock %}</title>
 <link href="{{ settings.site_url }}/css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{{ settings.site_url }}/js/jquery.js"></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
 </head>
 
 <body>
@@ -50,16 +51,16 @@
                     	<form method="post" action="{{ getUrl('login') }}" autocomplete="off">
                         	<input type="hidden" name="do" value="login" />
                         	<input type="hidden" name="csrfhash" value="{{ getToken('login') }}" />
-                        <div align="center" style="padding:16px;">
+                        <div align="center">
                                     <input type="text" name="email" style="width:177px" placeholder="{{ LANG.YOUR_EMAIL_ADDRESS }}"  />
                         </div>
-                        <div align="center" style="padding:0px 16px 16px 16px;">
+                        <div align="center">
                                     <input type="password" name="password" style="width:177px" placeholder="{{ LANG.YOUR_PASSWORD }}" />
                         </div>
-                        <div style="padding:0px 16px 16px 16px;">
+                        <div>
                             <label><input type="checkbox" name="remember" value="1" /> {{ LANG.REMEMBER_ME }}</label>
                         </div>
-                        <div style="padding:16px; border-top:1px solid #d8dbdf">
+                        <div style="border-top:1px solid #d8dbdf">
                             <table width="100%">
                                 <tr>
                                     <td><a href="{{ getUrl('lost_password') }}">{{ LANG.LOST_PASSWORD }}</a></td>
@@ -93,7 +94,7 @@
                     {% endif %}
                 </div>  
             </div>
-            <div style="margin:0 10px 0 270px">
+            <div class="right_content">
             {% block content %}{% endblock %}
             </div>
             <div class="clear"></div>

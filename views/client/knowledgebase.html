@@ -33,31 +33,23 @@
 				<div class="knowledgebasearticlelisttitle"><a href="{{ article.url }}">{{ article.title }}</a></div>
 				<div style="margin-bottom:20px;">{{ article.content|raw }}</div>
 			{% endfor %}
-            
-            <table width="100%">
-            	<tr>
-                	{% if settings.knowledgebase_mostpopular == 'yes' %}
-                	<td width="50%" valign="top"><div class="knowledgebasepopulartitle">{{ LANG.MOST_POPULAR_ARTICLES }}</div></td>
-					{% endif %}
-					{% if settings.knowledgebase_newest == 'yes' %}
-                	<td width="50%" valign="top"><div class="knowledgebasepopulartitle">{{ LANG.NEWEST_ARTICLES }}</div></td>
-					{% endif %}
-                </tr>
-                <tr>
+
+
+            <div class="column">
                 {% if settings.knowledgebase_mostpopular == 'yes' %}
-                	<td valign="top">
-					{% for kb in kb_popular %}
-					<div class="knowledgebasearticlelist"><a href="{{ kb.url }}">{{ kb.title }}</a></div>
-					{% endfor %}
-					</td>
-				{% endif %}
-				{% if settings.knowledgebase_newest == 'yes' %}
-                	<td valign="top">
-					{% for kb in kb_newest %}
-					<div class="knowledgebasearticlelist"><a href="{{ kb.url }}">{{ kb.title }}</a></div>
-					{% endfor %}
-					</td>
-				{% endif %}
-                </tr>
-            </table>
+                    <div class="knowledgebasepopulartitle">{{ LANG.MOST_POPULAR_ARTICLES }}</div>
+                {% endif %}
+                {% for kb in kb_popular %}
+                <div class="knowledgebasearticlelist"><a href="{{ kb.url }}">{{ kb.title }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="column">
+                {% if settings.knowledgebase_newest == 'yes' %}
+                    <div class="knowledgebasepopulartitle">{{ LANG.NEWEST_ARTICLES }}</div>
+                {% for kb in kb_newest %}
+                <div class="knowledgebasearticlelist"><a href="{{ kb.url }}">{{ kb.title }}</a></div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
 {% endblock %}
