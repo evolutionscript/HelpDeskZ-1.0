@@ -47,3 +47,11 @@ For detailed information please see this <a href="http://www.helpdeskz.com/help/
 
 ## Translate HelpDeskZ to your language
 To translate HelpDeskZ read <a href="http://www.helpdeskz.com/help/knowledgebase/2/article/8/how-can-i-translate-helpdeskz">How can I translate HelpDeskZ.</a>
+
+## Css for mobile
+
+![Small Device](/docs/captures/small-device.png?raw=true)
+
+![Medium Device](/docs/captures/medium-device.png?raw=true)
+
+![Large Device](/docs/captures/large-device.png?raw=true)
