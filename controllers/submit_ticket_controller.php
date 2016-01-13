@@ -134,7 +134,7 @@ if($action == 'displayForm' || $action == 'confirmation'){
 					}
 				}
 	
-				if(!isset($error_msg)){
+				if(!isset($error_msg) && $settings['ticket_attachment']==1){
 					$uploaddir = UPLOAD_DIR.'tickets/';		
 					if($_FILES['attachment']['error'] == 0){
 						$ext = pathinfo($_FILES['attachment']['name'], PATHINFO_EXTENSION);

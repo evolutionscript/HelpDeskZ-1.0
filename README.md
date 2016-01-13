@@ -17,7 +17,7 @@ HelpDeskZ requires:
 
 ## Upgrading
 
-To upgrade your HelpDeskZ from previus versions, please read the file UPGRADING.txt
+To upgrade your HelpDeskZ from previous versions, please read the file UPGRADING.txt
 
 ## Installation steps
 
@@ -28,18 +28,18 @@ Corresponding URL: http://www.site.com/support
 - Upload all HelpDeskZ files to your server.
 - Open **/install** in your browser, for example (modify to your URL):<br />
 http://www.site.com/support/install
-- The HelpDeskZ setup script will run. Click <strong>INSTALL HELPDESKZ</strong> and follow instructions through License agreement, Check Setup and Database settings.
+- The HelpDeskZ setup script will run. Click <strong>INSTALL HELPDESKZ</strong> and follow the instructions through License agreement, Check Setup and Database settings.
 - Before closing the install script **DELETE the "install" directory from your server!**
 - Now it's time to setup your help desk! Open the <strong>staff</strong> panel in your browser, for example:<br />
 http://www.site.com/support/?v=staff<br />
-Use the login details that you enter in the installation process.
+Use the login details that you entered in the installation process.
 - Go to <strong>Settings -&gt; General</strong> to get to the settings page.
-- Take some time and get familiar with all the available settings. Most should be self-explanatory,
+- Take some time and get familiar with all of the available settings. Most of them should be self-explanatory.
 - If you want to use permalinks like http://www.site.com/support/staff/ then you have to enable this option on Settings -> General -> Helpdesk -> Use SEO-friendly URLs
 - Good luck using HelpDeskZ!
 - 
 ## Email Piping
-HelpDeskZ supports email piping, this allows the creation of tickets from incoming emails.
+HelpDeskZ supports email piping, this allows the auto-creation of tickets from incoming emails to a set email address.
 - To enable email piping for your help desk follow this <a href="http://www.helpdeskz.com/help/knowledgebase/2/article/10/setting-up-email-piping">email piping tutorial.</a>
 
 ## Customize the look

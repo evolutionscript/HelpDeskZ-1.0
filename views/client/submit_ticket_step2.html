@@ -74,13 +74,16 @@
             </td>
         </tr>
 </table>
-
-        <div class="form-part-title">{{ LANG.ATTACHMENTS }}</div>
+    <div class="form-part-title">{{ LANG.ATTACHMENTS }}</div>
+{% if settings.ticket_attachment == 1 %}
 <table width="100%" cellpadding="1" cellpadding="4" border="0">
     <tr>
         <td><input type="file" name="attachment" /></td>
     </tr>
 </table>
+{% else %}
+<input type="hidden" name="attachment" value="" />
+{% endif %}
         {% if settings.use_captcha %}
             <table width="100%" cellspacing="1" cellpadding="4" border="0">
         	<tr>
