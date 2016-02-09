@@ -35,8 +35,8 @@ class Mailer
 		$this->mail->AddReplyTo($settings['email_ticket'], $this->company_name);
 		$this->mail->AddAddress($this->data['to_mail'], $this->data['from']);
 		$this->mail->Subject = $this->mail_subject;
-		$this->mail->ContentType = 'text/plain'; 
-		$this->mail->IsHTML(false);
+		$this->mail->ContentType = 'text/plain';
+		$this->mail->IsHTML(($settings['html_email'] == "yes" ? true : false));
 		$this->mail->Body = $this->mail_content;
 		$this->mail->CharSet = 'UTF-8';
 		if($this->data['attachement'] == 1){

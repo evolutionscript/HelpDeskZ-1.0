@@ -271,6 +271,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 ('smtp_ssl', 'tls'),
 ('smtp_username', 'mail@gmail.com'),
 ('smtp_password', 'password'),
+('html_email', 'no'),
 ('tickets_replies', '10'),
 ('helpdeskz_version', '".HELPDESKZ_VERSION."'),
 ('closeticket_time', '72'),
