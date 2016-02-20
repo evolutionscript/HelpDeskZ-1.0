@@ -13,7 +13,7 @@ require_once HELPDESKZ_PATH.'includes/classes/classMysql.php';
 require_once HELPDESKZ_PATH.'includes/classes/classMysqli.php';
 require_once HELPDESKZ_PATH.'includes/classes/classInput.php';
 $input = new Input_Cleaner();
-function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
+function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password, $db_charset){
 	$query = array();
 	$query[] = "CREATE TABLE `".$db_prefix."articles` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -26,7 +26,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `public` int(1) NOT NULL DEFAULT '1',
 	  PRIMARY KEY (`id`),
 	  KEY `category` (`category`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."attachments` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `name` varchar(200) NOT NULL,
@@ -40,14 +40,14 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  KEY `article_id` (`article_id`),
 	  KEY `ticket_id` (`ticket_id`),
 	  KEY `msg_id` (`msg_id`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."canned_response` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `title` varchar(255) DEFAULT NULL,
 	  `message` text,
 	  `position` int(11) NOT NULL DEFAULT '1',
 	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."custom_fields` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `type` varchar(100) NOT NULL,
@@ -56,15 +56,16 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `required` int(1) NOT NULL DEFAULT '0',
 	  `display` int(11) NOT NULL DEFAULT '1',
 	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."departments` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `dep_order` int(11) NOT NULL DEFAULT '0',
 	  `name` varchar(255) NOT NULL,
 	  `type` int(2) NOT NULL DEFAULT '0',
 	  `autoassign` int(1) NOT NULL DEFAULT '0',
+	  `autoassign_web` int(1) NOT NULL DEFAULT '0',
 	  PRIMARY KEY (`id`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."emails` (
 	  `id` varchar(255) NOT NULL,
 	  `orderlist` smallint(2) NOT NULL,
@@ -72,18 +73,18 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `subject` varchar(255) NOT NULL,
 	  `message` text NOT NULL,
 	  PRIMARY KEY (`id`)
-	) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."error_log` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `error` text,
 	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."file_types` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `type` varchar(10) DEFAULT NULL,
 	  `size` varchar(100) NOT NULL DEFAULT '0',
 	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."knowledgebase_category` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `name` varchar(200) NOT NULL,
@@ -91,13 +92,13 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `parent` int(11) NOT NULL DEFAULT '0',
 	  `public` int(2) NOT NULL DEFAULT '1',
 	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."login_attempt` (
 	  `ip` varchar(200) NOT NULL,
 	  `attempts` int(2) NOT NULL DEFAULT '0',
 	  `date` int(11) NOT NULL DEFAULT '0',
 	  UNIQUE KEY `ip` (`ip`)
-	) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."login_log` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `date` int(11) NOT NULL,
@@ -109,7 +110,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  PRIMARY KEY (`id`),
 	  KEY `date` (`date`),
 	  KEY `staff_id` (`staff_id`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."news` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `title` varchar(200) NOT NULL,
@@ -118,24 +119,24 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `date` int(11) NOT NULL,
 	  `public` int(1) NOT NULL DEFAULT '1',
 	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."pages` (
 	  `id` varchar(255) NOT NULL,
 	  `title` varchar(255) DEFAULT NULL,
 	  `content` text,
 	  UNIQUE KEY `home` (`id`)
-	) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+	) ENGINE=InnoDB DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."priority` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `name` varchar(255) NOT NULL,
 	  `color` varchar(10) NOT NULL DEFAULT '#000000',
 	  PRIMARY KEY (`id`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."settings` (
 	  `field` varchar(255) DEFAULT NULL,
 	  `value` varchar(255) DEFAULT NULL,
 	  UNIQUE KEY `field` (`field`)
-	) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."staff` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `username` varchar(255) NOT NULL,
@@ -152,7 +153,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `admin` int(1) NOT NULL DEFAULT '0',
 	  `status` enum('Enable','Disable') NOT NULL DEFAULT 'Enable',
 	  PRIMARY KEY (`id`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."tickets` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `code` varchar(255) NOT NULL,
@@ -172,7 +173,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `custom_vars` text,
 	  PRIMARY KEY (`id`),
 	  KEY `code` (`code`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."tickets_messages` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `ticket_id` int(11) NOT NULL DEFAULT '0',
@@ -184,7 +185,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `email` varchar(200) DEFAULT NULL,
 	  PRIMARY KEY (`id`),
 	  KEY `ticket_id` (`ticket_id`)
-	) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+	) ENGINE=MyISAM  DEFAULT CHARSET=".$db_charset.";";
 	$query[] = "CREATE TABLE `".$db_prefix."users` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `salutation` int(1) NOT NULL DEFAULT '0',
@@ -195,17 +196,17 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	  `status` int(1) NOT NULL DEFAULT '1',
 	  PRIMARY KEY (`id`),
 	  KEY `email` (`email`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=latin1;";		
+	) ENGINE=InnoDB  DEFAULT CHARSET=".$db_charset.";";
 	
-	$query[] = "INSERT INTO `".$db_prefix."departments` (`id`, `dep_order`, `name`, `type`, `autoassign`) VALUES(1, 1, 'General', 0, 1);";
+	$query[] = "INSERT INTO `".$db_prefix."departments` (`id`, `dep_order`, `name`, `type`, `autoassign`, `autoassign_web`) VALUES(1, 1, 'General', 0, 1, 0);";
     $query[] = "INSERT INTO `".$db_prefix."emails` (`id`, `orderlist`, `name`, `subject`, `message`) VALUES
 ('staff_reply', 5, 'Staff Reply', '[#%ticket_id%] %ticket_subject%', '%message%\n\n\nTicket Details\n---------------\n\nTicket ID: %ticket_id%\nDepartment: %ticket_department%\nStatus: %ticket_status%\nPriority: %ticket_priority%\n\n\nHelpdesk: %helpdesk_url%'),
 ('autoresponse', 4, 'New Message Autoresponse', '[#%ticket_id%] %ticket_subject%', 'Dear %client_name%,\n\nYour reply to support request #%ticket_id% has been noted.\n\n\nTicket Details\n---------------\n\nTicket ID: %ticket_id%\nDepartment: %ticket_department%\nStatus: %ticket_status%\nPriority: %ticket_priority%\n\n\nHelpdesk: %helpdesk_url%'),
 ('new_ticket', 3, 'New ticket creation', '[#%ticket_id%] %ticket_subject%', 'Dear %client_name%,\n\nThank you for contacting us. This is an automated response confirming the receipt of your ticket. One of our agents will get back to you as soon as possible. For your records, the details of the ticket are listed below. When replying, please make sure that the ticket ID is kept in the subject line to ensure that your replies are tracked appropriately.\n\n		Ticket ID: %ticket_id%\n		Subject: %ticket_subject%\n		Department: %ticket_department%\n		Status: %ticket_status%\n                Priority: %ticket_priority%\n\n\nYou can check the status of or reply to this ticket online at: %helpdesk_url%\n\nRegards,\n%company_name%'),
 ('new_user', 1, 'Welcome email registration', 'Welcome to %company_name% helpdesk', 'This email is confirmation that you are now registered at our helpdesk.\n\nRegistered email: %client_email%\nPassword: %client_password%\n\nYou can visit the helpdesk to browse articles and contact us at any time: %helpdesk_url%\n\nThank you for registering!\n\n%company_name%\nHelpdesk: %helpdesk_url%'),
 ('lost_password', 2, 'Lost password confirmation', 'Lost password request for %company_name% helpdesk', 'We have received a request to reset your account password for the %company_name% helpdesk (%helpdesk_url%).\n\nYour new passsword is: %client_password%\n\nThank you,\n\n\n%company_name%\nHelpdesk: %helpdesk_url%'),
-('staff_ticketnotification', 6, 'New ticket notification to staff', 'New ticket notification', 'Dear %staff_name%,\r\n\r\nA new ticket has been created in department assigned for you, please login to staff panel to answer it.\r\n\r\n\r\nTicket Details\r\n---------------\r\n\r\nTicket ID: %ticket_id%\r\nDepartment: %ticket_department%\r\nStatus: %ticket_status%\r\nPriority: %ticket_priority%\r\n\r\n\r\nHelpdesk: %helpdesk_url%');
-";
+('staff_ticketnotification', 6, 'New ticket notification to staff', 'New ticket notification', 'Dear %staff_name%,\r\n\r\nA new ticket has been created in department assigned for you, please login to staff panel to answer it.\r\n\r\n\r\nTicket Details\r\n---------------\r\n\r\nTicket ID: %ticket_id%\r\nDepartment: %ticket_department%\r\nStatus: %ticket_status%\r\nPriority: %ticket_priority%\r\n\r\n\r\nHelpdesk: %helpdesk_url%'),
+('staff_ticketupdate_notification', 7, 'Ticket update notification to staff', '[#%ticket_id%] %ticket_subject% (Update)', 'Dear %staff_name%,\r\n\r\nA ticket has been updated in department assigned for you, please login to staff panel to answer it.\r\n\r\n\r\nTicket Details\r\n---------------\r\n\r\nTicket ID: %ticket_id%\r\nDepartment: %ticket_department%\r\nStatus: %ticket_status%\r\nPriority: %ticket_priority%\r\n\r\n\r\nHelpdesk: %helpdesk_url%\r\n\r\n%message%');";
 	$query[] = "INSERT INTO `".$db_prefix."file_types` (`id`, `type`, `size`) VALUES
 (1, 'gif', '0'),
 (2, 'png', '0'),
@@ -238,7 +239,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 ('use_captcha', '1'),
 ('email_ticket', 'support@mysite.com'),
 ('site_name', 'HelpDeskz Support Center'),
-('site_url', 'http://".str_replace("/install/install.php", "",$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'])."'),
+('site_url', 'http://".str_replace("/install/install.php", "",$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'])."'),
 ('windows_title', 'HelpDeskZ Support Center'),
 ('show_tickets', 'DESC'),
 ('ticket_reopen', '0'),
@@ -285,7 +286,15 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 ('googleclientid', NULL),
 ('googleclientsecret', NULL),
 ('socialbuttonnews', '0'),
-('socialbuttonkb', '0');";
+('socialbuttonkb', '0'),
+('imap_host',''),
+('imap_port','143'),
+('imap_username',''),
+('imap_password',''),
+('imap_mail_downloader_processaction','move'),
+('imap_mail_downloader_processaction_folder','processed'),
+('email_piping_trigger_notification','no'),
+('email_on_new_reply','no');";
 
 
 	$query[] = "INSERT INTO `".$db_prefix."staff` (`id`, `username`, `password`, `fullname`, `email`, `login`, `last_login`, `department`, `timezone`, `signature`, `avatar`, `admin`, `status`) VALUES
@@ -293,14 +302,15 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	return $query;
 }
 
-function helpdeskz_saveConfigFile($db_host, $db_name, $db_user, $db_password, $db_prefix, $db_type){
+function helpdeskz_saveConfigFile($db_host, $db_name, $db_user, $db_password, $db_prefix, $db_type, $db_charset){
 	$content = '<?php
 	$config[\'Database\'][\'dbname\'] = \''.$db_name.'\';
 	$config[\'Database\'][\'tableprefix\'] = \''.$db_prefix.'\';
 	$config[\'Database\'][\'servername\'] = \''.$db_host.'\';
 	$config[\'Database\'][\'username\'] = \''.$db_user.'\';
-	$config[\'Database\'][\'password\'] = \''.str_replace("'","\'", $db_password).'\';
+	$config[\'Database\'][\'password\'] = \''.str_replace("'","\\'", $db_password).'\';
 	$config[\'Database\'][\'type\'] = \''.$db_type.'\';
+	$config[\'Database\'][\'charset\'] = \''.$db_charset.'\';
 	?>';
 	if ( ! file_put_contents(HELPDESKZ_PATH . 'includes/config.php', $content) )
 	{
@@ -465,10 +475,18 @@ function helpdeskz_database($error_msg =null){
 	<td width="200">User Password:</td>
 	<td><input type="text" name="db_password" value="<?php echo htmlspecialchars($_POST['db_password']);?>" size="40" autocomplete="off" /></td>
 	</tr>
-    <tr>
-    <td width="200">Table prefix:</td>
-    <td><input type="text" name="db_prefix" value="<?php echo ($_POST['db_prefix'] == ''?'hdz_':htmlspecialchars($_POST['db_prefix']));?>" size="40" autocomplete="off" /></td>
-    </tr>
+		<tr>
+			<td width="200">Table prefix:</td>
+			<td><input type="text" name="db_prefix" value="<?php echo ($_POST['db_prefix'] == ''?'hdz_':htmlspecialchars($_POST['db_prefix']));?>" size="40" autocomplete="off" /></td>
+		</tr>
+		<tr>
+			<td width="200">Database Charset:</td>
+			<td><select name="sql_charset">
+					<option value="utf8" <?php echo ($_POST['sql_charset'] == 'utf8'?'selected':'');?>>utf8</option>
+					<option value="latin1" <?php echo ($_POST['sql_charset'] == 'latin1'?'selected':'');?>>latin1</option>
+				</select>
+			</td>
+		</tr>
     <tr>
     <td width="200">Use:</td>
     <td><select name="sql_type">
@@ -526,11 +544,11 @@ if($input->p['license'] == 'agree'){
 		}else{
 
 			$db->connect($input->p['db_name'], $input->p['db_host'], $input->p['db_user'], $input->p['db_password'], $input->p['db_prefix']);
-			$query = helpdeskz_getQuery($input->p['db_prefix'], $input->p['admin_user'], $input->p['admin_password']);
+			$query = helpdeskz_getQuery($input->p['db_prefix'], $input->p['admin_user'], $input->p['admin_password'], $input->p['sql_charset']);
 			foreach($query as $q){
 				$db->query($q);
 			}
-			helpdeskz_saveConfigFile($input->p['db_host'], $input->p['db_name'], $input->p['db_user'], $input->p['db_password'], $input->p['db_prefix'], $input->p['sql_type']);
+			helpdeskz_saveConfigFile($input->p['db_host'], $input->p['db_name'], $input->p['db_user'], $input->p['db_password'], $input->p['db_prefix'], $input->p['sql_type'], $input->p['sql_charset']);
 			header('location: install.php?result=completed');
 			exit;
 		}

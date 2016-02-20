@@ -102,5 +102,33 @@ if($text != '' && is_array($department)){
 					),
 	);
 	$mailer = new Mailer($data_mail);
+
+	if ($settings['email_piping_trigger_notification']){
+		/* New ticket notification for staff */
+		$q = $db->query("SELECT id, fullname, email, department FROM ".TABLE_PREFIX."staff WHERE newticket_notification=1 AND status='Enable'");
+		while($r = $db->fetch_array($q))
+		{
+			$department_list = unserialize($r['department']);
+			$department_list = (is_array($department_list)?$department_list:array());
+			if(in_array($department['id'],$department_list))
+			{
+				/* Mailer */
+				$data_mail = array(
+					'id' => 'staff_ticketnotification',
+					'to' => $r['fullname'],
+					'to_mail' => $r['email'],
+					'vars' => array('%staff_name%' => $r['fullname'],
+						'%staff_name%' => $r['fullname'],
+						'%ticket_id%' => $ticket_id,
+						'%ticket_subject%' => $input->p['subject'],
+						'%ticket_department%' => $department['name'],
+						'%ticket_status%' => $LANG['OPEN'],
+						'%ticket_priority%' => $priorityvar['name'],
+					),
+				);
+				$mailer = new Mailer($data_mail);
+			}
+		}
+	}
 }
 ?>

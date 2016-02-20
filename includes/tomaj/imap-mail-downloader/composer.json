@@ -1,0 +1,27 @@
+{
+  "name": "tomaj/imap-mail-downloader",
+  "description": "IMAP mail downloader",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomas Majer",
+      "homepage": "http://tomaj.sk"
+    }
+  ],
+  "require": {
+    "php": ">= 5.3.7",
+    "ext-imap": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "~2.0",
+    "phpunit/phpunit": ">4.2",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}

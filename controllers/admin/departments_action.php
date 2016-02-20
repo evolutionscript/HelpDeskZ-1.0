@@ -34,11 +34,15 @@ if($params[1] == 'getDepartmentForm'){
 		if($input->p['autoassign'] == 1){
 			$db->query("UPDATE ".TABLE_PREFIX."departments SET autoassign=0");
 		}
+		if($input->p['autoassign_web'] == 1){
+			$db->query("UPDATE ".TABLE_PREFIX."departments SET autoassign_web=0");
+		}
 		$data = array(
 						'name' => $input->p['name'],
 						'dep_order' => (!is_numeric($input->p['dep_order'])?1:$input->p['dep_order']),
 						'type' => ($input->p['type'] == 1?1:0),
 						'autoassign' => ($input->p['autoassign'] == 1?1:0),
+						'autoassign_web' => ($input->p['autoassign_web'] == 1 ? 1 : 0)
 					);
 		$db->update(TABLE_PREFIX."departments", $data, "id=".$db->real_escape_string($input->p['department_id']));
 		header('location:'.getUrl($controller,$action,array('departments','department_updated')));
@@ -53,14 +57,18 @@ if($params[1] == 'getDepartmentForm'){
 		if($input->p['autoassign'] == 1){
 			$db->query("UPDATE ".TABLE_PREFIX."departments SET autoassign=0");
 		}
+		if($input->p['autoassign_web'] == 1){
+			$db->query("UPDATE ".TABLE_PREFIX."departments SET autoassign_web=0");
+		}
 		$data = array(
 						'name' => $input->p['name'],
 						'dep_order' => (!is_numeric($input->p['dep_order'])?1:$input->p['dep_order']),
 						'type' => ($input->p['type'] == 1?1:0),
 						'autoassign' => ($input->p['autoassign'] == 1?1:0),
+						'autoassign_web' => ($input->p['autoassign_web'] == 1 ? 1 : 0)
 					);
 		$db->insert(TABLE_PREFIX."departments", $data);
-		header('location:'.getUrl($controller,$action,array('departments','department_added')));
+//		header('location:'.getUrl($controller,$action,array('departments','department_added')));
 		exit;
 	}
 }elseif($params[1] == 'delete_department'){

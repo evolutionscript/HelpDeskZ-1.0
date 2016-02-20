@@ -16,12 +16,13 @@ tinymce.init({
 	relative_urls: false,	
 	remove_script_host: false,
 	convert_urls : true,
+    file_browser_callback: RoxyFileBrowser,
     plugins: [
          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
          "save table contextmenu directionality emoticons template paste textcolor"
    ],
-toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizeselect fontselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizeselect fontselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
     font_formats: "Andale Mono=andale mono,times;"+
         "Arial=arial,helvetica,sans-serif;"+
         "Arial Black=arial black,avant garde;"+
@@ -40,6 +41,30 @@ toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizes
         "Webdings=webdings;"+
         "Wingdings=wingdings,zapf dingbats",
  });
+function RoxyFileBrowser(field_name, url, type, win) {
+    var roxyFileman = '{{ getUrl() }}/js/fileman/index.html';
+    if (roxyFileman.indexOf("?") < 0) {
+        roxyFileman += "?type=" + type;
+    }
+    else {
+        roxyFileman += "&type=" + type;
+    }
+    roxyFileman += '&input=' + field_name + '&value=' + win.document.getElementById(field_name).value;
+    if(tinyMCE.activeEditor.settings.language){
+        roxyFileman += '&langCode=' + tinyMCE.activeEditor.settings.language;
+    }
+    tinyMCE.activeEditor.windowManager.open({
+        file: roxyFileman,
+        title: 'Roxy Fileman',
+        width: 850,
+        height: 650,
+        resizable: "yes",
+        plugins: "media",
+        inline: "yes",
+        close_previous: "no"
+    }, {     window: win,     input: field_name    });
+    return false;
+}
 </script>
 {% include 'knowledgebase_leftbar.html' %}
 <div style="margin-left:260px;">

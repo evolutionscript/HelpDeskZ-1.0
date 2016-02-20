@@ -1,0 +1,111 @@
+<?php
+/**
+ * @package HelpDeskZ
+ * @website: http://www.helpdeskz.com
+ * @community: http://community.helpdeskz.com
+ * @author Evolution Script S.A.C.
+ * @since 1.0.0
+ */
+$LANG['HOME'] = 'Home';
+$LANG['MY_TICKETS'] = 'Meine Tickets';
+$LANG['SUBMIT_A_TICKET'] = 'Ticket erstellen';
+$LANG['KNOWLEDGEBASE'] = 'Knowledgebase';
+$LANG['NEWS'] = 'Neuigkeiten';
+$LANG['ACCOUNT_LOGIN'] = 'Account Login';
+$LANG['LASTEST_UPDATES'] = 'Letzte Änderungen';
+$LANG['YOUR_EMAIL_ADDRESS'] = 'Ihre E-Mail-Adresse';
+$LANG['YOUR_PASSWORD'] = 'Ihr Passwort';
+$LANG['REMEMBER_ME'] = 'Erinnere dich an mich';
+$LANG['LOST_PASSWORD'] = 'Passwort vergessen';
+$LANG['LOGIN'] = 'Einloggen';
+$LANG['ACCOUNT'] = 'Account';
+$LANG['MY_PROFILE'] = 'Mein Profil';
+$LANG['PREFERENCES'] = 'Einstellungen';
+$LANG['CHANGE_PASSWORD'] = 'Passwort ändern';
+$LANG['LOGOUT'] = 'Ausloggen';
+$LANG['VIEW_ALL_NEWS'] = 'Alle Neuigkeiten';
+$LANG['POSTED_BY_ON'] = 'Geschrieben von %author% am %date%';
+$LANG['OLDEST_POSTS'] = 'Ältester Post';
+$LANG['NEWEST_POSTS'] = 'Neuster Post';
+$LANG['MOST_POPULAR_ARTICLES'] = 'Die beliebtesten Artikel';
+$LANG['NEWEST_ARTICLES'] = 'Die neusten Artikel';
+$LANG['MORE_TOPICS'] = 'Mehr Themen';
+$LANG['FILE_NOT_FOUND'] = 'Datei nicht gefunden.';
+$LANG['SEARCH'] = 'Suchen';
+$LANG['SEARCH_IN_KNOWLEDGEBASE'] = 'Suche in Knowledgebase';
+$LANG['SEARCH_RESULTS'] = 'Suchresultate';
+$LANG['SEARCH_NOT_FOUND'] = 'Es konnten keine relevanten Artikel zu Ihrer Suchanfrage gefunden werden.';
+$LANG['ENTER_EMAIL_RECOVER_PASSWORD'] = 'Bitte geben Sie Ihre E-Mail-Adresse ein und drücken Sie auf Senden, sodann erhalten Sie innert Kürze per E-Mail einen Link, um Ihr Passwort zurückzusetzen.';
+$LANG['ACCOUNT_INFORMATION'] = 'Account Informationen';
+$LANG['EMAIL'] = 'E-Mail';
+$LANG['CAPTCHA_VERIFICATION'] = 'CAPTCHA Bestätigung';
+$LANG['ENTER_TEXT_CAPTCHA'] = 'Bitte geben Sie den Text des Bildes in der Textbox unten ein. (Dies ist ein Sicherheitsmechanismus, um automatisierte Abfragen zu unterbinden)';
+$LANG['SUBMIT'] = 'Senden';
+$LANG['CANT_FIND_SOLUTION_SUBMIT_TICKET'] = 'When Sie keine Lösung zu Ihrem Problem finden, so können Sie uns gernen eine Support-Anfrage schicken. Bitte wählen Sie hierzu unten das zuständige Departement.';
+$LANG['SELECT_DEPARTMENT_TICKET'] = 'Bitte wählen Sie ein Department, dem Ihre Anfrage zugewiesen wird';
+$LANG['CSRF_ERROR'] = 'Ein Problem ist aufgetreten - eine Cross-Site-Anfrage wurde detektiert; bitte versuchen Sie es erneut.';
+$LANG['DEPARTMENTS'] = 'Departemente';
+$LANG['NEXT'] = 'Weiter';
+$LANG['INVALID_EMAIL_OR_PASSWORD'] = 'Ungültiges E-Mail oder Passwort.';
+$LANG['YOUR_TICKET_DETAILS'] = 'Ihre Ticket Angaben';
+$LANG['ENTER_TICKET_DETAILS'] = 'Bitte machen Sie unten alle notwendigen Angaben für Ihre Support-Anfrage. Wenn Sie ein Problem melden, bitte machen Sie soviele relevante Angaben wie möglich.';
+$LANG['GENERAL_INFORMATION'] = 'Generelle Informationen';
+$LANG['FULL_NAME'] = 'Vollständiger Name';
+$LANG['PRIORITY'] = 'Priorität';
+$LANG['YOUR_MESSAGE'] = 'Ihre Nachricht';
+$LANG['SUBJECT'] = 'Betreff';
+$LANG['ATTACHMENTS'] = 'Attachments';
+$LANG['INVALID_CAPTCHA_CODE'] = 'FEHLER: Ungültiger CAPTCHA Überprüfungs-Code';
+$LANG['INVALID_EMAIL_ADDRESS'] = 'FEHLER: Bitte geben Sie eine gültige E-Mail-Adresse an';
+$LANG['ONE_REQUIRED_FIELD_EMPTY'] = 'Ein notwendiges Feld ist noch leer';
+$LANG['ERROR_UPLOADING_A_FILE'] = 'Beim Versuch eine Datei hochzuladen ist ein Fehler aufgetreten.';
+$LANG['INVALID_FILE_EXTENSION'] = 'Ungültige Datei-Erweiterung.';
+$LANG['FILE_NOT_ALLOWED'] = 'Die Datei ist nicht zugelassen.';
+$LANG['FILE_IS_BIG'] = 'Die Datei ist zu gross. Die maximale Dateigrösse beträgt %size%';
+$LANG['REQUEST_RECEIVED'] = 'Ihre Support-Anfrage wurde erhalten';
+$LANG['REQUEST_RECEIVED_RESPONSE'] = 'Wir haben Ihre Support-Anfrage erhalten und werden uns bald bei Ihnen melden. Sie können sich bei diesem Helpdesk einloggen, um den aktuellen Stand Ihrer Anfrage einzusehen, ebenso erhalten Sie Updates per E-Mail.';
+$LANG['TICKET_ID'] = 'Ticket ID';
+
+$LANG['WE_SENT_YOUR_NEW_PASSWORD'] = 'Es wurde ein E-Mail mit Ihrem neuen Passwort an die angegebene E-Mail-Adresse versendet.';
+$LANG['EMAIL_WAS_NOT_FOUND'] = 'Die E-Mail-Adresse wurde nicht gefunden.';
+$LANG['SEARCH_TICKET_ID'] = 'Suche nach Ticket ID';
+$LANG['VIEW_TICKETS'] = 'Support-Anfragen öffnen';
+$LANG['VIEW_TICKETS_DESCRIPTION'] = 'Unten aufgelistet finden Sie all Ihre bisherigen Support-Anfragen. Klicken Sie auf den Namen einer Anfrage, um genauere Informationen dazu anzuzeigen.';
+$LANG['LAST_UPDATE'] = 'Letzte Änderung';
+$LANG['DEPARTMENT'] = 'Departement';
+$LANG['STATUS'] = 'Status';
+$LANG['VIEW_TICKET_ID'] = 'Anfrage #%id% öffnen';
+$LANG['CREATED'] = 'Erstellt';
+$LANG['UPDATED'] = 'Geändert';
+$LANG['TICKET_IS_CLOSED'] = 'Anfrage ist abgeschlossen.';
+$LANG['ADD_REPLY'] = 'Antworten';
+$LANG['YOUR_REPLY_SENT'] = 'Ihre Antwort zu dieser Support-Anfrage wurde erfolgreich übermittelt.';
+$LANG['USER'] = 'Benutzer';
+$LANG['STAFF'] = 'Mitarbeiter';
+$LANG['POSTED_ON'] = 'Veröffentlicht am';
+$LANG['TICKET_NOT_FOUND_OR_PERMISSION'] = 'Die von Ihnen gesuchte Support-Anfrage konnte nicht gefunden werden oder Sie verfügen nicht über die notwendige Berechtigung dieses einzusehen.';
+$LANG['TICKET_NOT_FOUND'] = 'Support-Anfrage nicht gefunden.';
+$LANG['YOUR_PROFILE_UPDATED'] = 'Ihr Profil wurde angepasst.';
+$LANG['UPDATE'] = 'Ändern';
+$LANG['YOUR_PREFERENCES_SAVED'] = 'Ihre Einstellungen wurden gespeichert.';
+$LANG['GENERAL_OPTIONS'] = 'Generelle Einstellungen';
+$LANG['TIMEZONE'] = 'Zeitzone';
+$LANG['DEFAULT_TIMEZONE'] = 'Standard-Zeitzone';
+$LANG['PASSWORD_UPDATED'] = 'Passwort angepasst.';
+$LANG['PASSWORD_DETAILS'] = 'Passwort-Details';
+$LANG['EXISTING_PASSWORD'] = 'Bestehendes Passwort';
+$LANG['NEW_PASSWORD'] = 'Neues Passwort';
+$LANG['CONFIRM'] = 'Bestätigen';
+$LANG['EXISTING_PASSWORD_INCORRECT'] = 'Ihr bestehendes Passwort ist falsch.';
+$LANG['NEW_PASSWORDS_DO_NOT_MATCH'] = 'Das neue Passwort wurde falsch bestätigt.';
+$LANG['EMAIL_ASSOCIATED_OTHER_ACCOUNT'] = 'Die angegebene E-Mail-Adresse ist bereits einem anderen Account zugeordnet.';
+$LANG['WE_ARE_PERFORMING_MAINTENANCE'] = 'Wir führen derzeit Wartungsarbeiten am Support-System durch. Bitte entschuldigen Sie die Unannehmlichkeiten.';
+$LANG['MAINTENANCE_MODE'] = 'Wartungsmodus';
+$LANG['PAGE_NOT_FOUND'] = 'Seite nicht gefunden - 404';
+$LANG['CLICK_TO_BACK_HELPDESK'] = 'Zurück zur Helpdesk Startseite';
+$LANG['OPEN'] = 'Pendent';
+$LANG['AWAITING_REPLY'] = 'Antwort erwartet';
+$LANG['IN_PROGRESS'] = 'In Bearbeitung';
+$LANG['ANSWERED'] = 'Beantwortet';
+$LANG['CLOSED'] = 'Abgeschlossen';
+?>

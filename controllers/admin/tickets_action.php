@@ -14,9 +14,11 @@ if($params[1] == 'update_general'){
 		$db->update(TABLE_PREFIX."settings", array('value' => ($input->p['ticket_reopen'] == '1'?'1':'0')), "field='ticket_reopen'");
 		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['tickets_page'])?$input->p['tickets_page']:20)), "field='tickets_page'");	
 		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['tickets_replies'])?$input->p['tickets_replies']:10)), "field='tickets_replies'");	
-		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['overdue_time'])?$input->p['overdue_time']:72)), "field='overdue_time'");	
-		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['closeticket_time'])?$input->p['closeticket_time']:72)), "field='closeticket_time'");	
-		
+		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['overdue_time'])?$input->p['overdue_time']:72)), "field='overdue_time'");
+		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['closeticket_time'])?$input->p['closeticket_time']:72)), "field='closeticket_time'");
+
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['email_on_new_reply']), "field='email_on_new_reply'");
+
 		$db->update(TABLE_PREFIX."settings", array('value' => ($input->p['ticket_attachment'] == '1'?'1':'0')), "field='ticket_attachment'");
 
 		header('location: '.getUrl($controller,$action, array('tickets','general_updated#ctab1')));

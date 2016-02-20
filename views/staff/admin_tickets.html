@@ -91,6 +91,17 @@
                 </td>
             </tr>
             <tr>
+                <td>{{ LANG.EMAIL_ON_NEW_REPLY }}<br />
+                    <span class="description">{{ LANG.EMAIL_ON_NEW_REPLY_INFO }}</span>
+                </td>
+                <td>
+                    <select name="email_on_new_reply">
+                        <option value="yes" {% if settings.email_on_new_reply == 'yes' %}selected{% endif %}>{{ LANG.YES }}</option>
+                        <option value="no" {% if settings.email_on_new_reply != 'yes' %}selected{% endif %}>{{ LANG.NO }}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
             	<td colspan="2">
                 	<input type="submit" name="btn" value="{{ LANG.UPDATE }}" />
                 </td>

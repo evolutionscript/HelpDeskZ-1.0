@@ -1,5 +1,8 @@
 #!/usr/bin/php -q
 <?php
+
+ini_set('error_reporting',E_ALL& ~E_NOTICE);
+
 /**
  * @package HelpDeskZ
  * @website: http://www.helpdeskz.com

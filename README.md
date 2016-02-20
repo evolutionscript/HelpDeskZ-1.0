@@ -1,6 +1,6 @@
 ![](/images/logo.png)
 
-Version: 1.0.2 from 1st June 2015<br>
+Version: 1.0.3 from 1st June 2015<br>
 Developed by: Evolution Script S.A.C.<br>
 [Help Desk Software HelpDeskZ](http://www.helpdeskz.com)
 

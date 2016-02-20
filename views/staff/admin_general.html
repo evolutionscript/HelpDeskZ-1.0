@@ -348,17 +348,6 @@ toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizes
     	<form method="post" action="{{ getUrl(controller,action,['general','update_email#ctab5'])|raw }}">
         <input type="hidden" name="csrfhash" class="csrfhash" />
     	<table class="widget-table-form">
-        	<tr>
-            	<td>{{ LANG.EMAIL_PIPING }}<br />
-                <span class="description">{{ LANG.EMAIL_PIPING_TXT }}</span>
-                </td>
-                <td>
-				<select name="email_piping">
-                <option value="yes" {% if settings.email_piping == 'yes' %}selected{% endif %}>{{ LANG.YES }}</option>
-                <option value="no" {% if settings.email_piping != 'yes' %}selected{% endif %}>{{ LANG.NO }}</option>
-                </select>
-                </td>
-            </tr>
             <tr>
             	<td>{{ LANG.USE_SMTP }}<br />
                 <span class="description">{{ LANG.USE_SMTP_TXT }}</span></td>
@@ -408,6 +397,85 @@ toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizes
                 </td>
                 <td valign="top" align="left">
                 	<input type="password" name="smtp_password" value="{{ settings.smtp_password }}" size="30" />
+                </td>
+            </tr>
+            <tr>
+                <td>{{ LANG.EMAIL_PIPING }}<br />
+                    <span class="description">{{ LANG.EMAIL_PIPING_TXT }}</span>
+                </td>
+                <td>
+                    <select name="email_piping">
+                        <option value="yes" {% if settings.email_piping == 'yes' %}selected{% endif %}>{{ LANG.YES }}</option>
+                        <option value="no" {% if settings.email_piping != 'yes' %}selected{% endif %}>{{ LANG.NO }}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ LANG.EMAIL_PIPING_NOTIFICATION }}<br />
+                    <span class="description">{{ LANG.EMAIL_PIPING_NOTIFICATION_INFO }}</span>
+                </td>
+                <td>
+                    <select name="email_piping_trigger_notification">
+                        <option value="yes" {% if settings.email_piping_trigger_notification == 'yes' %}selected{% endif %}>{{ LANG.YES }}</option>
+                        <option value="no" {% if settings.email_piping_trigger_notification != 'yes' %}selected{% endif %}>{{ LANG.NO }}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {{ LANG.IMAP_DOWNLOADER_TITLE }}<br/>
+                    <span class="description"> {{ LANG.IMAP_DOWNLOADER_DESCRIPTION }}</span>
+                </td>
+            </tr>
+            <tr>
+                <td width="40%">{{ LANG.IMAP_HOST }}<br />
+                    <span class="description"> {{ LANG.IMAP_HOST_INFO }}</span>
+                </td>
+                <td valign="top" align="left">
+                    <input type="text" name="imap_host" value="{{ settings.imap_host }}" size="30" />
+                </td>
+            </tr>
+            <tr>
+                <td width="40%">{{ LANG.IMAP_PORT }}<br />
+                    <span class="description">{{ LANG.IMAP_PORT_INFO }}</span>
+                </td>
+                <td valign="top" align="left">
+                    <input type="text" name="imap_port" value="{{ settings.imap_port }}" size="30" />
+                </td>
+            </tr>
+            <tr>
+                <td width="40%">{{ LANG.IMAP_USERNAME }}<br />
+                    <span class="description">{{ LANG.IMAP_USERNAME_INFO }}</span>
+                </td>
+                <td valign="top" align="left">
+                    <input type="text" name="imap_username" value="{{ settings.imap_username }}" size="30" />
+                </td>
+            </tr>
+            <tr>
+                <td width="40%">{{ LANG.IMAP_PASSWORD }}<br />
+                    <span class="description"> {{ LANG.IMAP_PASSWORD_INFO }}</span>
+                </td>
+                <td valign="top" align="left">
+                    <input type="password" name="imap_password" value="{{ settings.imap_password }}" size="30" />
+                </td>
+            </tr>
+            <tr>
+                <td>{{ LANG.IMAP_DOWNLOADER_PROCESSACTION }}<br />
+                    <span class="description">{{ LANG.IMAP_DOWNLOADER_PROCESSACTION_INFO }}</span>
+                </td>
+                <td>
+                    <select name="imap_mail_downloader_processaction">
+                        <option value="move" {% if settings.imap_mail_downloader_processaction == 'move' %}selected{% endif %}>{{ LANG.IMAP_DOWNLOADER_PROCESSACTION_OPTION_MOVE }}</option>
+                        <option value="delete" {% if settings.imap_mail_downloader_processaction == 'delete' %}selected{% endif %}>{{ LANG.IMAP_DOWNLOADER_PROCESSACTION_OPTION_DELETE }}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="40%">{{ LANG.IMAP_DOWNLOADER_PROCESSED_FOLDER }}<br />
+                    <span class="description"> {{ LANG.IMAP_DOWNLOADER_PROCESSED_FOLDER_INFO }}</span>
+                </td>
+                <td valign="top" align="left">
+                    <input type="text" name="imap_mail_downloader_processaction_folder" value="{{ settings.imap_mail_downloader_processaction_folder }}" size="30" />
                 </td>
             </tr>
             <tr>

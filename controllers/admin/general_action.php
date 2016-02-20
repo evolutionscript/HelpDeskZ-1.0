@@ -82,13 +82,24 @@ if($params[1] == 'update_helpdesk'){
 	if(verifyToken('general_settings', $input->p['csrfhash']) !== true){
 		$error_msg = $LANG['CSRF_ERROR'];	
 	}else{
-		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['email_piping']), "field='email_piping'");
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp']), "field='smtp'");
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_hostname']), "field='smtp_hostname'");
 		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['smtp_port'])?$input->p['smtp_port']:25)), "field='smtp_port'");	
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_ssl']), "field='smtp_ssl'");
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_username']), "field='smtp_username'");
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_password']), "field='smtp_password'");
+
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['email_piping']), "field='email_piping'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['email_piping_trigger_notification']), "field='email_piping_trigger_notification'");
+
+		// Imap Cron Downloader
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['imap_host']), "field='imap_host'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['imap_port']), "field='imap_port'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['imap_username']), "field='imap_username'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['imap_password']), "field='imap_password'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['imap_mail_downloader_processaction']), "field='imap_mail_downloader_processaction'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['imap_mail_downloader_processaction_folder']), "field='imap_mail_downloader_processaction_folder'");
+
 		header('location: '.getUrl($controller,$action, array('general','email_updated#ctab5')));
 		exit;	
 	}

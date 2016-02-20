@@ -18,7 +18,7 @@ $template_vars['ticket_status'] = $ticket_status;
 				header('location: '.getUrl('view_tickets'));
 				exit;	
 			}
-			$ticket = $db->fetchRow("SELECT COUNT(id) AS total, id, code, fullname, email, date, last_update, status, subject, (SELECT name FROM ".TABLE_PREFIX."departments WHERE id=".TABLE_PREFIX."tickets.department_id) as department, (SELECT name FROM ".TABLE_PREFIX."priority WHERE id=".TABLE_PREFIX."tickets.priority_id) as priority  FROM ".TABLE_PREFIX."tickets WHERE ".TABLE_PREFIX."tickets.id=".$db->real_escape_string($params[0])." AND ".TABLE_PREFIX."tickets.user_id='".$user['id']."'");
+			$ticket = $db->fetchRow("SELECT COUNT(id) AS total, id, code, department_id, fullname, email, date, last_update, status, subject, (SELECT name FROM ".TABLE_PREFIX."departments WHERE id=".TABLE_PREFIX."tickets.department_id) as department, (SELECT name FROM ".TABLE_PREFIX."priority WHERE id=".TABLE_PREFIX."tickets.priority_id) as priority  FROM ".TABLE_PREFIX."tickets WHERE ".TABLE_PREFIX."tickets.id=".$db->real_escape_string($params[0])." AND ".TABLE_PREFIX."tickets.user_id='".$user['id']."'");
 
 			if($ticket['total'] == 0){
 				$show_error = true;
@@ -81,6 +81,41 @@ $template_vars['ticket_status'] = $ticket_status;
 							$data = array('name' => $fileuploaded['name'], 'enc' => $fileuploaded['enc'], 'filesize' => $fileuploaded['size'], 'ticket_id' => $ticket['id'], 'msg_id' => $message_id, 'filetype' => $fileuploaded['filetype']);
 							$db->insert(TABLE_PREFIX."attachments", $data);
 						}
+
+						if ($settings['email_on_new_reply'] == 'yes'){
+
+							$status_name = $ticket_status[$ticket['status']];
+							$priority_name = $db->fetchOne("SELECT name FROM ".TABLE_PREFIX."priority WHERE id={$ticket['priority_id']}");
+							$department_name = $db->fetchOne("SELECT name FROM ".TABLE_PREFIX."departments WHERE id={$ticket['department_id']}");
+
+							/* response  notification for staff */
+							$q = $db->query("SELECT id, fullname, email, department FROM ".TABLE_PREFIX."staff WHERE newticket_notification=1 AND status='Enable'");
+							while($r = $db->fetch_array($q))
+							{
+								$department_list = unserialize($r['department']);
+								$department_list = (is_array($department_list)?$department_list:array());
+								if(in_array($ticket['department_id'],$department_list))
+								{
+									/* Mailer */
+									$data_mail = array(
+										'id' => 'staff_ticketupdate_notification',
+										'to' => $r['fullname'],
+										'to_mail' => $r['email'],
+										'vars' => array(
+											'%staff_name%' => $r['fullname'],
+											'%ticket_id%' => $ticket['code'],
+											'%ticket_subject%' => $ticket['subject'],
+											'%ticket_department%' => $department_name,
+											'%ticket_status%' => $status_name,
+											'%ticket_priority%' => $priority_name,
+											'%message%' => $input->p['message']
+										),
+									);
+									$mailer = new Mailer($data_mail);
+								}
+							}
+						}
+
 						header('location: '.getUrl('view_tickets','ticket',array($ticket['id'],'sent')));
 						exit;
 					}

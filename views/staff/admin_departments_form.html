@@ -21,13 +21,21 @@
 		<td><input type="text" style="width:100%" name="dep_order" value="{{ dep_order }}" /></td>
 	</tr>
     <tr>
-    	<td>{{ LANG.AUTOASSING_TICKETS_PIPE }}<br /><span class="description">{{ LANG.AUTOASSING_TICKETS_PIPE_INFO }}</span></td>
-		<td><select name="autoassign">
-        <option value="0" {% if department.autoassign == 0 %}selected{% endif %}>{{ LANG.NO }}</option>
-        <option value="1" {% if department.autoassign == 1 %}selected{% endif %}>{{ LANG.YES }}</option>
+        <td>{{ LANG.AUTOASSIGN_TICKETS_WEB }}<br /><span class="description">{{ LANG.AUTOASSIGN_TICKETS_WEB_INFO }}</span></td>
+        <td><select name="autoassign_web">
+            <option value="0" {% if department.autoassign_web == 0 %}selected{% endif %}>{{ LANG.NO }}</option>
+            <option value="1" {% if department.autoassign_web == 1 %}selected{% endif %}>{{ LANG.YES }}</option>
         </select>
         </td>
-	</tr>
+    </tr>
+    <tr>
+        <td>{{ LANG.AUTOASSING_TICKETS_PIPE }}<br /><span class="description">{{ LANG.AUTOASSING_TICKETS_PIPE_INFO }}</span></td>
+        <td><select name="autoassign">
+            <option value="0" {% if department.autoassign == 0 %}selected{% endif %}>{{ LANG.NO }}</option>
+            <option value="1" {% if department.autoassign == 1 %}selected{% endif %}>{{ LANG.YES }}</option>
+        </select>
+        </td>
+    </tr>
     <tr>
     	<td></td>
         <td><input type="submit" name="btn" value="{{ LANG.SUBMIT }}" /></td>

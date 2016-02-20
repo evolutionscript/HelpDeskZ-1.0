@@ -379,4 +379,30 @@ $LANG['USE_SOCIAL_BUTTONS_NEWS'] = 'Use Social buttons on News';
 $LANG['USE_SOCIAL_BUTTONS_NEWS_TXT'] = 'Allow to clients or visitors to share your news article via facebook, twitter or other social page.';
 $LANG['USE_SOCIAL_BUTTONS_KB'] = 'Use Social buttons on Knowledgebase';
 $LANG['USE_SOCIAL_BUTTONS_KB_TXT'] = 'Allow to clients or visitors to share your knowledgebase article via facebook, twitter or other social page.';
+
+$LANG['AUTOASSIGN_TICKETS_WEB'] = 'Auto-assign of tickets (web)';
+$LANG['AUTOASSIGN_TICKETS_WEB_INFO'] = 'If enabled for any department, clients will no longer see the page to select a department and will instead be directly presented the ticket form.';
+
+$LANG['EMAIL_PIPING_NOTIFICATION'] = "Auto-generate notification to staff assigned to specified department.";
+$LANG['EMAIL_PIPING_NOTIFICATION_INFO'] = "";
+
+$LANG['EMAIL_ON_NEW_REPLY'] = 'Send notification on client update';
+$LANG['EMAIL_ON_NEW_REPLY_INFO'] = 'If enabled the associated staff will receive an email once client make updates on the web frontend.';
+
+$LANG['IMAP_DOWNLOADER_TITLE'] = "Email Cronjob Downloader";
+$LANG['IMAP_DOWNLOADER_DESCRIPTION'] = "";
+$LANG['IMAP_HOST'] = 'IMAP Host';
+$LANG['IMAP_HOST_INFO'] = '';
+$LANG['IMAP_PORT'] = 'IMAP Port';
+$LANG['IMAP_PORT_INFO'] = '';
+$LANG['IMAP_USERNAME'] = 'IMAP Username';
+$LANG['IMAP_USERNAME_INFO'] = '';
+$LANG['IMAP_PASSWORD'] = 'IMAP Password';
+$LANG['IMAP_PASSWORD_INFO'] = '';
+$LANG['IMAP_DOWNLOADER_PROCESSACTION'] = 'Action after processing';
+$LANG['IMAP_DOWNLOADER_PROCESSACTION_INFO'] = 'This settings defines what happens with emails in your inbox, that have been fed to Helpdeskz through the pipe mechanism.';
+$LANG['IMAP_DOWNLOADER_PROCESSACTION_OPTION_DELETE'] = 'Delete any processed emails permanently';
+$LANG['IMAP_DOWNLOADER_PROCESSACTION_OPTION_MOVE'] = 'Move emails to specific folder (specify folder below)';
+$LANG['IMAP_DOWNLOADER_PROCESSED_FOLDER'] = 'Target folder';
+$LANG['IMAP_DOWNLOADER_PROCESSED_FOLDER_INFO'] = 'Here you specify to which folder in your inbox any processed mails will be moved to (see option above).';
 ?>

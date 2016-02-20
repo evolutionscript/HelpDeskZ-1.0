@@ -26,7 +26,8 @@
                 <th  {% if params.1 == 'users' %}class="active"{% endif %}><a href="{{ getUrl(controller,action,['departments','users',(params.2=='desc'?'asc':'desc')])|raw }}">{{ LANG.USERS }}</a></th>
                 <th  {% if params.1 == 'tickets' %}class="active"{% endif %}><a href="{{ getUrl(controller,action,['departments','tickets',(params.2=='desc'?'asc':'desc')])|raw }}">{{ LANG.TICKETS }}</a></th>
                 <th  {% if params.1 == 'dep_order' %}class="active"{% endif %} width="200"><a href="{{ getUrl(controller,action,['departments','dep_order',(params.2=='desc'?'asc':'desc')])|raw }}">{{ LANG.DISPLAY_ORDER }}</a></th>
-                <th width="200"><a href="javascript:void(0">{{ LANG.AUTOASSING_TICKETS_PIPE }}</a></th>
+                <th width="200"><a href="javascript:void(0);">{{ LANG.AUTOASSIGN_TICKETS_WEB }}</a></th>
+                <th width="200"><a href="javascript:void(0);">{{ LANG.AUTOASSING_TICKETS_PIPE }}</a></th>
                 <th></th>
             </tr>
             </thead>
@@ -39,6 +40,7 @@
                     <td align="center">{{ r.users }}</td>
                     <td align="center">{{ r.tickets }}</td>
                     <td align="center">{{ r.dep_order }}</td>
+                    <td align="center">{% if r.autoassign_web == 1 %}{{ LANG.SELECTED }}{% else %}-{% endif %}</td>
                     <td align="center">{% if r.autoassign == 1 %}{{ LANG.SELECTED }}{% else %}-{% endif %}</td>
 					<td>
   		        {% if r.dep_order != 1 %}<a href="{{ getUrl(controller, action, ['departments','move_department','up',r.id])|raw }}"><img src="{{ getUrl('') }}/images/cp/up.png" /></a>{% endif %}

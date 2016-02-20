@@ -113,7 +113,7 @@ while($r = $db->fetch_array($q)){
 	$r['total_articles'] = $db->fetchOne("SELECT COUNT(id) AS total FROM ".TABLE_PREFIX."articles WHERE category=".$r['id']." AND public=1");
 	$r['url'] = getUrl('knowledgebase',$r['id'],array(strtourl($r['name'])));
 	if($r['total_articles'] > 0){
-		$aq = $db->query("SELECT id, title FROM ".TABLE_PREFIX."articles WHERE category=".$r['id']." ORDER BY date DESC LIMIT {$settings['knowledgebase_articlesundercat']}");
+		$aq = $db->query("SELECT id, title FROM ".TABLE_PREFIX."articles WHERE category=".$r['id']." AND public=1 ORDER BY date DESC LIMIT {$settings['knowledgebase_articlesundercat']}");
 		while($ka = $db->fetch_array($aq)){
 			$ka['url'] = getUrl('knowledgebase',$r['id'],array('article', $ka['id'], strtourl($ka['title'])));
 			$r['article'][] = $ka;

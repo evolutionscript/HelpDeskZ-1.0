@@ -1,5 +1,31 @@
-Welcome to HelpDeskZ 1.0.2
+Welcome to HelpDeskZ 1.0.3
 ==========================
+
+For upgrade instructions please see below.
+
+
+Changelog
+=========
+
+Version 1.0.3
+-------------
+
+- During installation select database charset (utf-8 or latin1, previously predefined latin1)
+
+- Autoassign new tickets over web to a given department hiding the department selection step. (see departments settings site)
+
+- Added option to trigger notification to staff, when clients make an update through the web interface (see Tickets > general)
+
+- Integrated filemanager to knowledgebase editor (such as to directly embed pictures) using folder public-files
+    NOTE: please set write access
+
+- Added script to automatically scan an IMAP mail box for new mail and forward these to the email pipe script. (keyword cronjob)
+    This is a feature intended for those who can not configure emails to be piped directly to a script.
+
+
+
+Version 1.0.2
+-------------
 
 We have made some changes in this new version like:
 
@@ -12,6 +38,29 @@ We have made some changes in this new version like:
 - Email notification to staff assigned when new ticket is created
 
 - Social buttons to share knowledgebase articles or news
+
+
+To upgrade from 1.0.2 to 1.0.3
+==============================
+
+- Upload the following files overwriting any existing ones:
+    /controllers/admin/departments_action.php
+    /controllers/admin/general_action.php
+    /controllers/submit_ticket_controller.php
+    /includes/language/staff/english.php
+    /includes/parser/new_ticket.php
+    /includes/parser/reply_ticket.php
+    /includes/tomaj/*.*
+    /includes/cron.php
+    /includes/pipe.php
+    /install/*.*
+    /js/fileman/*.*
+    /public-files/*.*
+    /views/staff/admin_departments.html
+    /views/staff/admin_departments_form.html
+    /views/staff/admin_general.html
+    /views/staff/knowledgebase_article.html
+    /views/staff/knowledgebase_editarticle.html
 
 
 To upgrade from 1.0 to 1.0.2
