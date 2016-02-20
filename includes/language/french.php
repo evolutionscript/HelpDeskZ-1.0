@@ -1,0 +1,111 @@
+<?php
+/**
+ * @package HelpDeskZ
+ * @website: http://www.helpdeskz.com
+ * @community: http://community.helpdeskz.com
+ * @author Evolution Script S.A.C.
+ * @since 1.0.0
+ */
+$LANG['HOME'] = 'Home';
+$LANG['MY_TICKETS'] = 'Mes Demandes';
+$LANG['SUBMIT_A_TICKET'] = 'Ouvrir une demande';
+$LANG['KNOWLEDGEBASE'] = 'Base de connaissances';
+$LANG['NEWS'] = 'Actualités';
+$LANG['ACCOUNT_LOGIN'] = 'Connexion';
+$LANG['LASTEST_UPDATES'] = 'Dernière mise à jour';
+$LANG['YOUR_EMAIL_ADDRESS'] = 'Votre adresse mail';
+$LANG['YOUR_PASSWORD'] = 'Votre mot de passe';
+$LANG['REMEMBER_ME'] = 'Se souvenir de moi';
+$LANG['LOST_PASSWORD'] = 'Mot de passe perdu';
+$LANG['LOGIN'] = 'Login';
+$LANG['ACCOUNT'] = 'Compte';
+$LANG['MY_PROFILE'] = 'Mon profil';
+$LANG['PREFERENCES'] = 'Préférences';
+$LANG['CHANGE_PASSWORD'] = 'Changer le mot de passe';
+$LANG['LOGOUT'] = 'Se déconnecter';
+$LANG['VIEW_ALL_NEWS'] = 'Voir toutes les actualités';
+$LANG['POSTED_BY_ON'] = 'Posté par %author% le %date%';
+$LANG['OLDEST_POSTS'] = 'Oldest Posts';
+$LANG['NEWEST_POSTS'] = 'Newest Posts';
+$LANG['MOST_POPULAR_ARTICLES'] = 'Articles populaires';
+$LANG['NEWEST_ARTICLES'] = 'Articles récents';
+$LANG['MORE_TOPICS'] = 'Plus de sujetse';
+$LANG['FILE_NOT_FOUND'] = 'Fichier non trouvé.';
+$LANG['SEARCH'] = 'Rechercher';
+$LANG['SEARCH_IN_KNOWLEDGEBASE'] = 'Rechercher dans la base de connaissances';
+$LANG['SEARCH_RESULTS'] = 'Résultats de recherche';
+$LANG['SEARCH_NOT_FOUND'] = 'Nous ne sommes en mesure de répondre à votre recherche';
+$LANG['ENTER_EMAIL_RECOVER_PASSWORD'] = 'Please enter your registered email address and click Submit. You will receive an email with a link to reset your password shortly.';
+$LANG['ACCOUNT_INFORMATION'] = 'Information du compte';
+$LANG['EMAIL'] = 'E-mail';
+$LANG['CAPTCHA_VERIFICATION'] = 'Verification CAPTCHA';
+$LANG['ENTER_TEXT_CAPTCHA'] = 'Merci de saisir le texte de l\'image ci-dessous.';
+$LANG['SUBMIT'] = 'Envoyer';
+$LANG['CANT_FIND_SOLUTION_SUBMIT_TICKET'] = 'Si vous ne trouvez pas une solution à votre problème, vous pouvez faire votre demande en en sélectionnant le bon service.';
+$LANG['SELECT_DEPARTMENT_TICKET'] = 'Please, select a department where your ticket will be submitted';
+$LANG['CSRF_ERROR'] = 'We encountered a problem (cross-site request forgery detected); please try again.';
+$LANG['DEPARTMENTS'] = 'Services';
+$LANG['NEXT'] = 'Suivant';
+$LANG['INVALID_EMAIL_OR_PASSWORD'] = 'Invalid email address or password.';
+$LANG['YOUR_TICKET_DETAILS'] = 'Détail de la demande';
+$LANG['ENTER_TICKET_DETAILS'] = 'Entrez les détails de votre demande. Si vous reportez un problème, merci de fournir le plus d\'information possible.';
+$LANG['GENERAL_INFORMATION'] = 'Information générale';
+$LANG['FULL_NAME'] = 'Nom complet';
+$LANG['PRIORITY'] = 'Priorité';
+$LANG['YOUR_MESSAGE'] = 'Votre Message';
+$LANG['SUBJECT'] = 'Sujet';
+$LANG['ATTACHMENTS'] = 'Pièces jointes';
+$LANG['INVALID_CAPTCHA_CODE'] = 'ERROR: Invalid Verification Image Code';
+$LANG['INVALID_EMAIL_ADDRESS'] = 'ERROR: Please specify a valid e-mail address';
+$LANG['ONE_REQUIRED_FIELD_EMPTY'] = 'Un champ obligatoire est vide';
+$LANG['ERROR_UPLOADING_A_FILE'] = 'There was an error uploading a file.';
+$LANG['INVALID_FILE_EXTENSION'] = 'Invalid file extension.';
+$LANG['FILE_NOT_ALLOWED'] = 'Le fichier n\'est pas autorisé.';
+$LANG['FILE_IS_BIG'] = 'Fichier trop gros. La taille maximum est %size%';
+$LANG['REQUEST_RECEIVED'] = 'Votre demande a été envoyé';
+$LANG['REQUEST_RECEIVED_RESPONSE'] = 'Nous avons reçu votre demande, et notre équipe va y répondre le plus rapidement possible. Vous pouvez vous connecter au Support ou vérifier vos emails pour suivre les évolutions de votre demande.';
+$LANG['TICKET_ID'] = 'ID de la demande';
+
+$LANG['WE_SENT_YOUR_NEW_PASSWORD'] = 'We have sent an email with a new password to the address provided';
+$LANG['EMAIL_WAS_NOT_FOUND'] = 'Email was not found.';
+$LANG['SEARCH_TICKET_ID'] = 'Search Ticket ID';
+$LANG['VIEW_TICKETS'] = 'Voir les demandes';
+$LANG['VIEW_TICKETS_DESCRIPTION'] = 'Listed below are the tickets you\'ve submitted in the past. Click on a ticket\'s subject to view the ticket and its history.';
+$LANG['LAST_UPDATE'] = 'Last Update';
+$LANG['DEPARTMENT'] = 'Service';
+$LANG['STATUS'] = 'Statut';
+$LANG['VIEW_TICKET_ID'] = 'Voir la demande #%id%';
+$LANG['CREATED'] = 'Créé';
+$LANG['UPDATED'] = 'Updated';
+$LANG['TICKET_IS_CLOSED'] = 'Cette demande est fermée.';
+$LANG['ADD_REPLY'] = 'Ajouter une réponse';
+$LANG['YOUR_REPLY_SENT'] = 'Votre réponse à été envoyé';
+$LANG['USER'] = 'User';
+$LANG['STAFF'] = 'Staff';
+$LANG['POSTED_ON'] = 'Posté le';
+$LANG['TICKET_NOT_FOUND_OR_PERMISSION'] = 'Sorry, we couldn\'t find the ticket you requested or you do not have permission to view it.';
+$LANG['TICKET_NOT_FOUND'] = 'Demande non trouvée.';
+$LANG['YOUR_PROFILE_UPDATED'] = 'Your profile has been updated.';
+$LANG['UPDATE'] = 'Update';
+$LANG['YOUR_PREFERENCES_SAVED'] = 'Your preferences have been saved.';
+$LANG['GENERAL_OPTIONS'] = 'General Options';
+$LANG['TIMEZONE'] = 'Timezone';
+$LANG['DEFAULT_TIMEZONE'] = 'Default Time Zone';
+$LANG['PASSWORD_UPDATED'] = 'Password updated.';
+$LANG['PASSWORD_DETAILS'] = 'Password Details';
+$LANG['EXISTING_PASSWORD'] = 'Existing Password';
+$LANG['NEW_PASSWORD'] = 'New Password';
+$LANG['CONFIRM'] = 'Confirm';
+$LANG['EXISTING_PASSWORD_INCORRECT'] = 'Your existing password is incorrect.';
+$LANG['NEW_PASSWORDS_DO_NOT_MATCH'] = 'The new passwords entered do not match.';
+$LANG['EMAIL_ASSOCIATED_OTHER_ACCOUNT'] = 'Email address is already associated with another account.';
+$LANG['WE_ARE_PERFORMING_MAINTENANCE'] = 'We are currently performing scheduled maintenance. Our apologies for the inconvenience caused';
+$LANG['MAINTENANCE_MODE'] = 'Mode Maintenance';
+$LANG['PAGE_NOT_FOUND'] = 'Page not found - 404';
+$LANG['CLICK_TO_BACK_HELPDESK'] = 'Cliquer pour revenir à la page d\'accueil';
+$LANG['OPEN'] = 'Ouvert';
+$LANG['AWAITING_REPLY'] = 'En attente d\'une réponse';
+$LANG['IN_PROGRESS'] = 'En-cours';
+$LANG['ANSWERED'] = 'Répondu';
+$LANG['CLOSED'] = 'Cloturé';
+?>

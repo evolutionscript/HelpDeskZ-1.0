@@ -3,8 +3,8 @@
 {% block content %}
 <div class="searchboxcontainer">
 <form method="post" action="{{ getUrl('view_tickets','search') }}">
-<input type="submit" value="{{ LANG.SEARCH }}" class="search_button" />
-<input type="text" name="code" class="search_input" placeholder="{{ LANG.SEARCH_TICKET_ID }}" />
+    <input type="text" name="code" class="search_input" placeholder="{{ LANG.SEARCH_TICKET_ID }}" />
+    <input type="submit" value="{{ LANG.SEARCH }}" class="search_button" />
 </form>
 </div>
 

@@ -29,11 +29,6 @@ color:#888a8d;
 .clear{
 clear:both;
 }
-#wrapper{
-	width:1205px;
-	margin:0 auto;
-	padding:0px 20px;	
-}
 
 #header{
 	border-top:5px solid #4ab350;
@@ -72,9 +67,7 @@ select.language_selector{
 	list-style:none;
 	color:#FFFFFF;
 }
-#navbar ul li{
-	float:left;
-}
+
 #navbar ul li a{
 	color:#fff;
 	display:block;
@@ -91,11 +84,12 @@ select.language_selector{
 /* Content */
 #content{
 	background:#FFF;
-	padding:20px;
+	padding:10px;
+	padding-top:20px;
 }
 .title{
 	color:#4c5156;
-	font-size:24px;
+	font-size:20px;
 	margin-bottom:15px;
 	border-bottom:1px solid #cfd4d6;
 	padding:0px 0 12px;
@@ -113,9 +107,7 @@ select.language_selector{
 #footer a{
 	color:#eeeeee;	
 }
-.left_content{
-	width:230px; float:left;
-}
+
 .memberbox{
 	font-size:14px;	
 	margin-bottom:20px;
@@ -155,9 +147,11 @@ select.language_selector{
 .memberbox .mcontent ul li:last-child{
 	border-bottom:none;	
 }
+
 /* Forms */
-.tbl-title{
+.form-part-title{
 	font-size:16px;
+	font-weight: bold;
 }
 form .zebraodd{
 	padding:8px;
@@ -229,7 +223,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', end
 }
 input[type="text"].search_input{
 	width:100%;
-	font-size:18px;
+	font-size:14px;
 	padding:10px;
 	border-radius:3px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
@@ -240,10 +234,7 @@ input[type="text"].search_input{
 
 input[type="submit"].search_button{
 	z-index:999;
-	position:absolute;
-	float:right;
-	top:9px;
-	right:10px;
+	width: 100%;
 	color:#FFF;
 	border:none;
 	text-transform:uppercase;
@@ -262,6 +253,7 @@ background: linear-gradient(to bottom,  #8fc800 0%,#8fc800 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-8 */
 
 }
+
 .error_box{
 	border:1px solid #e0acac;
 	color:#b94a48;
@@ -460,7 +452,7 @@ text-align:center;
 }
 
 .knowledgebasearticletitle{
-	font-size:26px;
+	font-size:22px;
 	padding-bottom:10px;
 }
 .knowledgebasearticletitledescr{
@@ -576,4 +568,114 @@ text-align:center;
     display: inline-block;
     vertical-align: text-top;
     margin-right: 10px;
+}
+
+
+/** Adaptaive css for mobile  */
+
+img {
+	max-width: 100% !important;
+}
+
+#wrapper{
+	margin:0 auto;
+}
+
+
+.mcontent > form > div{
+	padding-left:5px;
+	padding-right: 5px;
+}
+
+.right_content{
+
+	margin:0 5px 0 5px;
+}
+
+#navbar ul li{
+}
+
+
+.column{
+	display: block;
+}
+
+
+@media (min-width: 640px) {
+
+	#wrapper{
+		padding:0px 20px;
+	}
+
+	#navbar ul li{
+		float:left;
+	}
+
+	.left_content{
+		float:left;
+	}
+
+	.mcontent > form > div{
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+
+	.right_content{
+		margin-left: 230px;
+	}
+
+	input[type="submit"].search_button{
+		position:absolute;
+		top:9px;
+		float:right;
+		right:10px;
+		width: auto;
+	}
+}
+
+@media (min-width: 768px) {
+
+	#content{
+		padding:20px;
+	}
+
+	.left_content{
+		float:left;
+		width: 230px;
+	}
+
+	.mcontent > form > div{
+		padding-left:15px;
+		padding-right: 15px;
+	}
+
+	.right_content{
+		margin-left: 250px;
+	}
+
+	.column{
+		display: inline-block;
+		width: 48%;
+	}
+
+	.title{
+		font-size: 24px;
+	}
+
+	input[type="text"].search_input{
+		font-size: 18px;
+	}
+
+	.knowledgebasearticletitle{
+		font-size: 26px;
+	}
+
+}
+
+@media (min-width: 992px) {
+
+
+	.right_content{
+		margin-left: 270px;
+	}
 }

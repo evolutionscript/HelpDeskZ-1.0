@@ -8,10 +8,8 @@
 <form method="post" action="{{ getUrl('submit_ticket','confirmation') }}" enctype="multipart/form-data">
 <input type="hidden" name="csrfhash" value="{{ getToken('submit_ticket') }}" />
 <input type="hidden" name="department" value="{{ department_id }}" />
+    <div class="form-part-title">{{ LANG.GENERAL_INFORMATION }}</div>
 <table width="100%" cellspacing="1" cellpadding="4" border="0">
-    <tr>
-        <td colspan="2" class="tbl-title"><strong>{{ LANG.GENERAL_INFORMATION }}</strong></td>
-    </tr>
     {% if client_status != 1 %}
     <tr>
             <td class="zebraodd" nowrap="nowrap"><span class="{% if  'fullname' in emptyvars %}redtxt{% endif %}">{{ LANG.FULL_NAME }}:</span> <span class="redtxt">*</span> 
@@ -63,12 +61,9 @@
         </td></tr>
     {% endfor %}
 </table>
-        
-        
+
+    <div class="form-part-title">{{ LANG.YOUR_MESSAGE }}</div>
 <table width="100%" cellspacing="1" cellpadding="4" border="0">
-    <tr>
-        <td colspan="2" class="tbl-title"><strong>{{ LANG.YOUR_MESSAGE }}</strong></td>
-    </tr>
         <tr>
             <td width="200" class="zebraodd"><span class="{% if 'subject' in emptyvars %}redtxt{% endif %}">{{ LANG.SUBJECT }}</span> <span class="redtxt">*</span></td>
             <td><input type="text" name="subject" style="width:100%" value="{{ POST.subject }}" /></td>
@@ -79,11 +74,9 @@
             </td>
         </tr>
 </table>
+    <div class="form-part-title">{{ LANG.ATTACHMENTS }}</div>
 {% if settings.ticket_attachment == 1 %}
 <table width="100%" cellpadding="1" cellpadding="4" border="0">
-    <tr>
-        <td class="tbl-title"><strong>{{ LANG.ATTACHMENTS }}</strong></td>
-    </tr>
     <tr>
         <td><input type="file" name="attachment" /></td>
     </tr>
@@ -94,7 +87,7 @@
         {% if settings.use_captcha %}
             <table width="100%" cellspacing="1" cellpadding="4" border="0">
         	<tr>
-            	<td class="tbl-title" colspan="2"><strong>{{ LANG.CAPTCHA_VERIFICATION }}</strong></td>
+            	<td class="form-part-title" colspan="2"><strong>{{ LANG.CAPTCHA_VERIFICATION }}</strong></td>
             </tr>
             <tr>
             	<td colspan="2" class="{% if 'captcha' in emptyvars %}redtxt{% endif %}">{{ LANG.ENTER_TEXT_CAPTCHA }}</td>
