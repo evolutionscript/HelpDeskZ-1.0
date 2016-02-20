@@ -579,7 +579,6 @@ img {
 
 #wrapper{
 	margin:0 auto;
-	padding:0px 20px;
 }
 
 
@@ -603,6 +602,10 @@ img {
 
 
 @media (min-width: 640px) {
+
+	#wrapper{
+		padding:0px 20px;
+	}
 
 	#navbar ul li{
 		float:left;
