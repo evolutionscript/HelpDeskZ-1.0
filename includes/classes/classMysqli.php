@@ -51,6 +51,7 @@ class MySQLIDB
     }
 	function db_connect($db_name, $db_server, $db_user, $db_passwd){
 		$link = @$this->functions[connect]($db_server, $db_user, $db_passwd, $db_name);
+		mysqli_set_charset($link, "utf8");
 		if ($this->functions['connect_errno']()){
 			die("<br /><br /><strong>Error MySQLi DB Conection</strong><br>Please contact to site administrator.");
 		}
