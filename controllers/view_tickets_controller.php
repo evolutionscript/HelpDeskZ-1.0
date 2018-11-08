@@ -91,7 +91,7 @@ $template_vars['ticket_status'] = $ticket_status;
 						include($filename);
 						exit;
 					}else{
-						$attachment = $db->fetchRow("SELECT *, COUNT(id) AS total FROM ".TABLE_PREFIX."attachments WHERE id=".$db->real_escape_string($params[2])." AND ticket_id=".$params[0]." AND msg_id=".$db->real_escape_string($params[3]));
+						$attachment = $db->fetchRow("SELECT *, COUNT(id) AS total FROM ".TABLE_PREFIX."attachments WHERE id=".$db->real_escape_string($params[2])." AND ticket_id=".$params[0]." AND msg_id='".$db->real_escape_string($params[3])."'");
 						if($attachment['total'] == 0){
 							$filename = CONTROLLERS.'home_controller.php';
 							$action = '404notfound';
