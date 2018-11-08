@@ -85,7 +85,7 @@ $template_vars['ticket_status'] = $ticket_status;
 						exit;
 					}
 				}elseif($params[1] == 'attachment'){
-					if(!is_numeric($params['2'])){
+					if(!is_numeric($params['2']) || !is_numeric($params['3'])){
 						$filename = CONTROLLERS.'home_controller.php';
 						$action = '404notfound';
 						include($filename);
