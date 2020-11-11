@@ -16,7 +16,7 @@ if(is_array($_SESSION['user'])){
 }elseif(isset($_COOKIE['usrhash'])){
 	$data = decrypt($_COOKIE['usrhash']);
 	$data = unserialize($data);
-	if(is_array($data) && is_numeric($data['expires']) && $data['expires'] > time()){
+	if(is_array($data) && is_numeric($data['expires']) && $data['expires'] > time() && is_numeric($data['id'])){
 		$user = $db->fetchRow("SELECT * FROM ".TABLE_PREFIX."users WHERE id=".$db->real_escape_string($data['id']));
 		if(is_array($user) && $user['email'] == $data['email'] && $user['password'] == $data['password']){
 			$_SESSION['user']['id'] = $user['id'];
