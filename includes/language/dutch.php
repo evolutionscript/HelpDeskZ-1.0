@@ -1,0 +1,111 @@
+<?php
+/**
+ * @package HelpDeskZ
+ * @website: http://www.helpdeskz.com
+ * @community: http://community.helpdeskz.com
+ * @author Jeroen Hoegen Dijkhof
+ * @since 1.0.0
+ */
+$LANG['HOME'] = 'Home';
+$LANG['MY_TICKETS'] = 'Mijn Tickets';
+$LANG['SUBMIT_A_TICKET'] = 'Maak een ticket aan';
+$LANG['KNOWLEDGEBASE'] = 'Kennisbank';
+$LANG['NEWS'] = 'Nieuws';
+$LANG['ACCOUNT_LOGIN'] = 'Accountlogin';
+$LANG['LASTEST_UPDATES'] = 'Nieuwste updates';
+$LANG['YOUR_EMAIL_ADDRESS'] = 'Uw mailadres';
+$LANG['YOUR_PASSWORD'] = 'Uw wachtwoord';
+$LANG['REMEMBER_ME'] = 'Onthoud mij';
+$LANG['LOST_PASSWORD'] = 'Wachtwoord vergeten';
+$LANG['LOGIN'] = 'Login';
+$LANG['ACCOUNT'] = 'Account';
+$LANG['MY_PROFILE'] = 'Mijn profiel';
+$LANG['PREFERENCES'] = 'Voorkeuren';
+$LANG['CHANGE_PASSWORD'] = 'Wachtwoord veranderen';
+$LANG['LOGOUT'] = 'Uitloggen';
+$LANG['VIEW_ALL_NEWS'] = 'Bekijk al het nieuws';
+$LANG['POSTED_BY_ON'] = 'Geplaatst door %author% op %date%';
+$LANG['OLDEST_POSTS'] = 'Oudste berichten';
+$LANG['NEWEST_POSTS'] = 'Nieuwste berichten';
+$LANG['MOST_POPULAR_ARTICLES'] = 'Populairste artikelen';
+$LANG['NEWEST_ARTICLES'] = 'Nieuwste artikelen';
+$LANG['MORE_TOPICS'] = 'Meer onderwerpen';
+$LANG['FILE_NOT_FOUND'] = 'Bestand niet gevonden.';
+$LANG['SEARCH'] = 'Zoeken';
+$LANG['SEARCH_IN_KNOWLEDGEBASE'] = 'Zoeken in Kennisbank';
+$LANG['SEARCH_RESULTS'] = 'Doorzoek resultaten';
+$LANG['SEARCH_NOT_FOUND'] = 'We konden niets relevants aan uw zoekopdracht vinden.';
+$LANG['ENTER_EMAIL_RECOVER_PASSWORD'] = 'Voer het mailadres waarmee u geregistreerd bent in en druk op Verzend. U zult binnenkort een bericht ontvangen om uw wachtwoord opnieuw in te stellen.';
+$LANG['ACCOUNT_INFORMATION'] = 'Accountinformatie';
+$LANG['EMAIL'] = 'E-mail';
+$LANG['CAPTCHA_VERIFICATION'] = 'CAPTCHA Verificatie';
+$LANG['ENTER_TEXT_CAPTCHA'] = 'Voer de tekst in die u op de afbeelding kunt zien. (We gebruiken dit om bots en spam te voorkomen)';
+$LANG['SUBMIT'] = 'Verzenden';
+$LANG['CANT_FIND_SOLUTION_SUBMIT_TICKET'] = 'Indien u geen oplossing kunt vinden voor uw probleem, kunt u de juiste afdeling hieronder selecteren.';
+$LANG['SELECT_DEPARTMENT_TICKET'] = 'Kies alstublieft een afdeling om een ticket bij te openen.';
+$LANG['CSRF_ERROR'] = 'Er ging iets mis (cross-site request forgery gedetecteerd); probeer het nogmaals.';
+$LANG['DEPARTMENTS'] = 'Afdelignen';
+$LANG['NEXT'] = 'Volgende';
+$LANG['INVALID_EMAIL_OR_PASSWORD'] = 'Ongeldig mailadres of ongeldig wachtwoord';
+$LANG['YOUR_TICKET_DETAILS'] = 'Uw ticketdetails';
+$LANG['ENTER_TICKET_DETAILS'] = 'Voer uw ticketdetails hieronder in. Indien u een probleem rapporteert raden wij u aan om zo veel mogelijk relevante informatie te vermelden.';
+$LANG['GENERAL_INFORMATION'] = 'Algemene informatie';
+$LANG['FULL_NAME'] = 'Volledige naam';
+$LANG['PRIORITY'] = 'Prioriteit';
+$LANG['YOUR_MESSAGE'] = 'Uw bericht';
+$LANG['SUBJECT'] = 'Onderwerp';
+$LANG['ATTACHMENTS'] = 'Bijlagen';
+$LANG['INVALID_CAPTCHA_CODE'] = 'FOUT: Ongeldige afbeeldingsverificatiecode';
+$LANG['INVALID_EMAIL_ADDRESS'] = 'FOUT: Geef alstublieft een geldig e-mailadres op';
+$LANG['ONE_REQUIRED_FIELD_EMPTY'] = 'Een van de vereiste velden is leeg';
+$LANG['ERROR_UPLOADING_A_FILE'] = 'Er ging iets mis bij het uploaden van een bestand.';
+$LANG['INVALID_FILE_EXTENSION'] = 'Ongeldige afbeeldingsextensie.';
+$LANG['FILE_NOT_ALLOWED'] = 'Bestand niet toegestaan.';
+$LANG['FILE_IS_BIG'] = 'Bestand is te groot. De maximale grootte van een bestand is %size%';
+$LANG['REQUEST_RECEIVED'] = 'Your request has been received';
+$LANG['REQUEST_RECEIVED_RESPONSE'] = 'We hebben uw verzoek ontvangen en ons team zal zo spoedig mogelijk reageren. U kunt inloggen op de helpdesk om de status van uw verzoek in te zien, of u kunt uw e-mail in de gaten houden voor verdere informatie.';
+$LANG['TICKET_ID'] = 'Ticketnummer';
+
+$LANG['WE_SENT_YOUR_NEW_PASSWORD'] = 'We hebben een e-mail gestuurd naar het door u opgegeven e-mailadres met een nieuw wachtwoord';
+$LANG['EMAIL_WAS_NOT_FOUND'] = 'E-mail niet gevonden.';
+$LANG['SEARCH_TICKET_ID'] = 'Zoek ticketnummer';
+$LANG['VIEW_TICKETS'] = 'Toon tickets';
+$LANG['VIEW_TICKETS_DESCRIPTION'] = 'Hieronder vindt u de tickets die u in het verleden ingeschoten hebt. Klik op het onderwerp van een ticket om het ticket en zijn geschiedenis in te zien.';
+$LANG['LAST_UPDATE'] = 'Laatste update';
+$LANG['DEPARTMENT'] = 'Afdeling';
+$LANG['STATUS'] = 'Status';
+$LANG['VIEW_TICKET_ID'] = 'Toon ticket #%id%';
+$LANG['CREATED'] = 'Aangemaakt';
+$LANG['UPDATED'] = 'Bijgewerkt';
+$LANG['TICKET_IS_CLOSED'] = 'Ticket is momenteel gesloten.';
+$LANG['ADD_REPLY'] = 'Antwoord toevoegen';
+$LANG['YOUR_REPLY_SENT'] = 'Uw antwoord op dit ticket is succesvol ingediend';
+$LANG['USER'] = 'Gebruiker';
+$LANG['STAFF'] = 'Personeel';
+$LANG['POSTED_ON'] = 'Geplaatst op';
+$LANG['TICKET_NOT_FOUND_OR_PERMISSION'] = 'Soory, we konden het door u opgevraagde ticket niet vinden of u heeft geen toegang om de inhoud te tonen.';
+$LANG['TICKET_NOT_FOUND'] = 'Ticket niet gevonden.';
+$LANG['YOUR_PROFILE_UPDATED'] = 'Uw profiel is bijgewerkt.';
+$LANG['UPDATE'] = 'Bijwerken';
+$LANG['YOUR_PREFERENCES_SAVED'] = 'Uw instellingen zijn opgeslagen.';
+$LANG['GENERAL_OPTIONS'] = 'Algemene Opties';
+$LANG['TIMEZONE'] = 'Tijdszone';
+$LANG['DEFAULT_TIMEZONE'] = 'Standaardtijdszone';
+$LANG['PASSWORD_UPDATED'] = 'Wachtwoord bijgewerkt.';
+$LANG['PASSWORD_DETAILS'] = 'Wachtwoorddetails';
+$LANG['EXISTING_PASSWORD'] = 'Bestaand wachtwoord';
+$LANG['NEW_PASSWORD'] = 'Nieuw wachtwoord';
+$LANG['CONFIRM'] = 'Bevestigen';
+$LANG['EXISTING_PASSWORD_INCORRECT'] = 'Uw bestaande wachtwoord is incorrect.';
+$LANG['NEW_PASSWORDS_DO_NOT_MATCH'] = 'De nieuwe wachtwoorden komen niet overeen.';
+$LANG['EMAIL_ASSOCIATED_OTHER_ACCOUNT'] = 'Dit e-mailadres is al gekoppeld aan een ander account.';
+$LANG['WE_ARE_PERFORMING_MAINTENANCE'] = 'We voeren momenteel gepland onderhoud uit. Onze excuses voor het ongemak.';
+$LANG['MAINTENANCE_MODE'] = 'Onderhoudsmodus';
+$LANG['PAGE_NOT_FOUND'] = 'Pagina niet gevonden - 404';
+$LANG['CLICK_TO_BACK_HELPDESK'] = 'Klik om terug te gaan naar de helpdeskstartpagina';
+$LANG['OPEN'] = 'Openen';
+$LANG['AWAITING_REPLY'] = 'Wachtend op antwoord';
+$LANG['IN_PROGRESS'] = 'Wordt verwerkt';
+$LANG['ANSWERED'] = 'Beantwoord';
+$LANG['CLOSED'] = 'Gesloten';
+?>
