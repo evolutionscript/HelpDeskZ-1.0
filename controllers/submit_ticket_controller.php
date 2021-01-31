@@ -216,13 +216,14 @@ if($action == 'displayForm' || $action == 'confirmation'){
 					'id' => 'new_ticket',
 					'to' => $fullname,
 					'to_mail' => $email,
-					'vars' => array('%client_name%' => $fullname, 
+					'vars' => array('%client_name%' => $fullname,
 									'%client_email%' => $email, 
 									'%ticket_id%' => $ticket_id,
 									'%ticket_subject%' => $input->p['subject'],
 									'%ticket_department%' => $department['name'],
 									'%ticket_status%' => $LANG['OPEN'],
 									'%ticket_priority%' => $priorityvar['name'],
+									'%ticket_message%' => $input->p['message'],
 									),
 					);
 					$mailer = new Mailer($data_mail);
@@ -240,12 +241,16 @@ if($action == 'displayForm' || $action == 'confirmation'){
                                 'id' => 'staff_ticketnotification',
                                 'to' => $r['fullname'],
                                 'to_mail' => $r['email'],
-                                'vars' => array('%staff_name%' => $r['fullname'],
+                                'vars' => array(
+									'%client_name%' => $fullname,
+									'%client_email%' => $email,
+									'%staff_name%' => $r['fullname'],
                                     '%ticket_id%' => $ticket_id,
                                     '%ticket_subject%' => $input->p['subject'],
                                     '%ticket_department%' => $department['name'],
                                     '%ticket_status%' => $LANG['OPEN'],
                                     '%ticket_priority%' => $priorityvar['name'],
+									'%ticket_message%' => $input->p['message'],
                                 ),
                             );
                             $mailer = new Mailer($data_mail);

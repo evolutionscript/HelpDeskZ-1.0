@@ -17,7 +17,7 @@ class Mailer
 		$this->smtp_ssl = $settings['smtp_ssl'];
 		$this->smtp_username = $settings['smtp_username'];
 		$this->smtp_password = $settings['smtp_password'];
-		$this->maildata = $db->fetchRow("SELECT subject, message FROM ".TABLE_PREFIX."emails WHERE id='{$this->data['id']}'");
+		$this->maildata = $db->fetchRow("SELECT subject, message, html FROM ".TABLE_PREFIX."emails WHERE id='{$this->data['id']}'");
 		$this->company_name = $settings['site_name'];
 		$this->helpdesk_url = $settings['site_url'];
 		$this->setVars();
@@ -35,8 +35,17 @@ class Mailer
 		$this->mail->AddReplyTo($settings['email_ticket'], $this->company_name);
 		$this->mail->AddAddress($this->data['to_mail'], $this->data['from']);
 		$this->mail->Subject = $this->mail_subject;
-		$this->mail->ContentType = 'text/plain'; 
-		$this->mail->IsHTML(false);
+
+		// If html emails are enabled in the settings and this email is an html email send it as an HTML Email.
+		if ($settings['html_email'] == "yes" && $this->maildata['html'] == "yes") {
+			$this->mail->ContentType = 'text/html';
+			$this->mail->IsHTML(true);
+		} else {
+			$this->mail->ContentType = 'text/plain';
+			$this->mail->IsHTML(false);
+		}
+
+
 		$this->mail->Body = $this->mail_content;
 		$this->mail->CharSet = 'UTF-8';
 		if($this->data['attachement'] == 1){

@@ -89,6 +89,7 @@ if($params[1] == 'update_helpdesk'){
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_ssl']), "field='smtp_ssl'");
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_username']), "field='smtp_username'");
 		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['smtp_password']), "field='smtp_password'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['html_email']), "field='html_email'");
 		header('location: '.getUrl($controller,$action, array('general','email_updated#ctab5')));
 		exit;	
 	}

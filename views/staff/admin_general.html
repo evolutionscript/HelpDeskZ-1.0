@@ -348,6 +348,15 @@ toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizes
     	<form method="post" action="{{ getUrl(controller,action,['general','update_email#ctab5'])|raw }}">
         <input type="hidden" name="csrfhash" class="csrfhash" />
     	<table class="widget-table-form">
+			<tr>
+				<td>{{ LANG.USE_HTML }}<br />
+					<span class="description">{{ LANG.USE_HTML_TXT }}</span></td>
+				<td><select name="html_email">
+					<option value="yes"  {% if settings.html_email == 'yes' %}selected{% endif %}>{{ LANG.YES }}</option>
+					<option value="no" {% if settings.html_email != 'yes' %}selected{% endif %}>{{ LANG.NO }}</option>
+				</select>
+				</td>
+			</tr>
         	<tr>
             	<td>{{ LANG.EMAIL_PIPING }}<br />
                 <span class="description">{{ LANG.EMAIL_PIPING_TXT }}</span>

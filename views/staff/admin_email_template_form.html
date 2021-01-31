@@ -11,6 +11,7 @@
         <textarea style="height:300px; width:100%" name="message">{{ email.message }}</textarea>
         </td>
     </tr>
+
 	<tr>
     	<td colspan="2">
                     <div class="description">{{ LANG.SPECIAL_TAGS }}:
@@ -21,6 +22,15 @@
                     </div>
         </td>
     </tr>
+	<tr>
+		<td>{{ LANG.HTML_EMAIL_FORM }}<br />
+			<span class="description">{{ LANG.HTML_EMAIL_FORM_TXT }}</span></td>
+		<td><select name="html">
+			<option value="yes"  {% if email.html == 'yes' %}selected{% endif %}>{{ LANG.YES }}</option>
+			<option value="no" {% if email.html != 'yes' %}selected{% endif %}>{{ LANG.NO }}</option>
+		</select>
+		</td>
+	</tr>
     <tr>
     	<td></td>
         <td><input type="submit" name="btn" value="{{ LANG.SUBMIT }}" /></td>
