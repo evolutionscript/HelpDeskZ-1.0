@@ -11,6 +11,7 @@ if($params[1] == 'update_general'){
 		$error_msg = $LANG['CSRF_ERROR'];	
 	}else{
 		$db->update(TABLE_PREFIX."settings", array('value' => ($input->p['show_tickets'] == 'DESC'?'DESC':'ASC')), "field='show_tickets'");
+		$db->update(TABLE_PREFIX."settings", array('value' => ($input->p['not_logged_tickets'] == 1?1:0)), "field='not_logged_tickets'");
 		$db->update(TABLE_PREFIX."settings", array('value' => ($input->p['ticket_reopen'] == '1'?'1':'0')), "field='ticket_reopen'");
 		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['tickets_page'])?$input->p['tickets_page']:20)), "field='tickets_page'");	
 		$db->update(TABLE_PREFIX."settings", array('value' => (is_numeric($input->p['tickets_replies'])?$input->p['tickets_replies']:10)), "field='tickets_replies'");	

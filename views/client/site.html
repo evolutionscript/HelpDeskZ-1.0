@@ -20,7 +20,9 @@
             {% if client_status == 1 %}
             <li><a href="{{ getUrl('view_tickets') }}" {% if controller == 'view_tickets' %}class="current"{% endif %}>{{ LANG.MY_TICKETS }}</a></li>
             {% endif %}
+            {% if client_status == 1 or settings.not_logged_tickets == 1%}
             <li><a href="{{ getUrl('submit_ticket') }}" {% if controller == 'submit_ticket' %}class="current"{% endif %}>{{ LANG.SUBMIT_A_TICKET }}</a></li>
+	    {% endif %}
             {% if settings.knowledgebase == 'yes' %}
             <li><a href="{{ getUrl('knowledgebase') }}" {% if controller == 'knowledgebase' %}class="current"{% endif %}>{{ LANG.KNOWLEDGEBASE }}</a></li>
             {% endif %}

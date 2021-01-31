@@ -37,6 +37,15 @@
                 </select>
                 </td>
             </tr>
+            <tr>
+            	<td>{{ LANG.PERM_OPEN_TICKET_NOT_LOGGED}}<br />
+                <span class="description">{{ LANG.PERM_OPEN_TICKET_NOT_LOGGED_TXT }}</span></td>
+                <td><select name="not_logged_tickets">
+                <option value="1" {% if settings.not_logged_tickets == '1' %}selected{% endif %}>{{ LANG.YES }}</option>
+                <option value="0" {% if settings.not_logged_tickets == '0' %}selected{% endif %}>{{ LANG.NO }}</option>
+                </select>
+                </td>
+            </tr>
         	<tr>
             	<td width="40%">{{ LANG.ALLOW_REOPEN_CLOSED_TICKET }}<br />
                 <span class="description">{{ LANG.ALLOW_REOPEN_CLOSED_TICKET_TXT }} </span>

@@ -27,7 +27,7 @@
 				}
 			}
 			if(!$error_msg){
-				$staff = $db->fetchRow("SELECT COUNT(id) AS total, id, username, password, login, fullname, status FROM ".TABLE_PREFIX."staff WHERE username='".$db->real_escape_string($input->p['username'])."' AND password='".sha1($input->p['password'])."'");
+				$staff = $db->fetchRow("SELECT COUNT(id) AS total, id, username, password, login, fullname, status FROM ".TABLE_PREFIX."staff WHERE username='".$db->real_escape_string($input->p['username'])."' AND password='".sha1($input->p['password'])."' GROUP BY id");
 				if($staff['total'] == 0){
 					if($settings['login_attempt'] > 0){
 						if($attempt['total'] == 0){

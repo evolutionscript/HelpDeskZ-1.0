@@ -9,6 +9,7 @@
  */
 define('INCLUDES','./');
 define('UPLOAD_DIR','../uploads/');
+require_once INCLUDES.'global.php';
 require_once INCLUDES.'parser/MimeMailParser.class.php';
 require_once INCLUDES.'classes/classRegistry.php';
 require_once INCLUDES.'classes/classMailer.php';

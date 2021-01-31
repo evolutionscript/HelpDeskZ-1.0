@@ -379,4 +379,7 @@ $LANG['USE_SOCIAL_BUTTONS_NEWS'] = 'Use Social buttons on News';
 $LANG['USE_SOCIAL_BUTTONS_NEWS_TXT'] = 'Allow to clients or visitors to share your news article via facebook, twitter or other social page.';
 $LANG['USE_SOCIAL_BUTTONS_KB'] = 'Use Social buttons on Knowledgebase';
 $LANG['USE_SOCIAL_BUTTONS_KB_TXT'] = 'Allow to clients or visitors to share your knowledgebase article via facebook, twitter or other social page.';
+$LANG['PERM_OPEN_TICKET_NOT_LOGGED'] = 'Allow opening tickets for unauthenticated clients?';
+$LANG['PERM_OPEN_TICKET_NOT_LOGGED_TXT'] = 'If set to no, any user can open a ticket even if you are not logged in.';
+
 ?>

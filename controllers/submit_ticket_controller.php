@@ -9,7 +9,11 @@
 include(INCLUDES.'helpdesk.inc.php');
 $template_vars = array();
 $emptyvars = array();
-if($action == 'displayForm' || $action == 'confirmation'){
+
+$template_name = 'submit_ticket.html';
+if($client_status != 1 && $settings['not_logged_tickets'] != 1){
+	$template_name = '404.html';
+} else if($action == 'displayForm' || $action == 'confirmation'){
 	$display_error = 1;
 	if($action == 'displayForm'){
 		if(is_numeric($input->p['department'])){
@@ -315,7 +319,7 @@ while($r = $db->fetch_array($q)){
 $template_vars['departments'] = $departments;
 $template_vars['display_error'] = $display_error;
 $template_vars['error_msg'] = $error_msg;
-$template = $twig->loadTemplate('submit_ticket.html');
+$template = $twig->loadTemplate($template_name);
 echo $template->render($template_vars);
 $db->close();
 exit;

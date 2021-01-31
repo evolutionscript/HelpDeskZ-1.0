@@ -285,7 +285,8 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 ('googleclientid', NULL),
 ('googleclientsecret', NULL),
 ('socialbuttonnews', '0'),
-('socialbuttonkb', '0');";
+('socialbuttonkb', '0'),
+('not_logged_tickets', '0');";
 
 
 	$query[] = "INSERT INTO `".$db_prefix."staff` (`id`, `username`, `password`, `fullname`, `email`, `login`, `last_login`, `department`, `timezone`, `signature`, `avatar`, `admin`, `status`) VALUES
