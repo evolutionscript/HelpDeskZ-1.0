@@ -44,7 +44,7 @@ if($action == 'search'){
 	$template_vars = array();
 	$result = 0;
 	if($input->p['word'] != '' && strlen($input->p['word']) > 3){
-		$q = $db->query("SELECT * FROM ".TABLE_PREFIX."articles WHERE public=1 {$hiddencategorylistq} AND content LIKE '%".$db->real_escape_string(htmlentities($input->p['word']))."%'  ORDER BY date DESC");
+		$q = $db->query("SELECT * FROM ".TABLE_PREFIX."articles WHERE public=1 {$hiddencategorylistq} AND (content LIKE '%".$db->real_escape_string(htmlentities($input->p['word']))."%' OR title LIKE '%".$db->real_escape_string(htmlentities($input->p['word']))."%')  ORDER BY date DESC");
 		while($r = $db->fetch_array($q)){
 			$result = 1;
 			$r['url'] = getUrl('knowledgebase',$r['category'],array('article', $r['id'], strtourl($r['title'])));
